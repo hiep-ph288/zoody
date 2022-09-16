@@ -1,18 +1,18 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import CharacterBox from "./src/components/CharacterBox";
-import MemberImage, { MemberImageProps } from "./src/components/MemberImage";
+import MemberItem, { MemberItemProps } from "./src/components/MemberItem";
 
-const data: MemberImageProps[] = [
-  { image: require("./assets/images/tiger.png"), name: "Tigers" },
-  { image: require("./assets/images/red-panda.png"), name: "Bamboos" },
+const data: MemberItemProps[] = [
+  { image: require("./assets/images/tiger-item.png"), name: "Tigers" },
+  { image: require("./assets/images/lion-item.png"), name: "Lion" },
 ];
 
 export default function Main() {
   return (
     <View>
       {data.map((prop) => (
-        <MemberImage {...prop} key={prop.name} />
+        <MemberItem {...prop} key={prop.name} />
       ))}
     </View>
   );
