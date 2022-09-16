@@ -5,7 +5,7 @@ import MemberItem, { MemberItemProps } from "./src/components/MemberItem";
 
 const data: MemberItemProps[] = [
   { image: require("./assets/images/tiger-item.png"), name: "Tigers" },
-  { image: require("./assets/images/lion-item.png"), name: "Lion" },
+  // { image: require("./assets/images/lion-item.png"), name: "Lion" },
 ];
 
 export default function Main() {

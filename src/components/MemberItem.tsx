@@ -1,8 +1,9 @@
 import { View, ImageBackground, ImageSourcePropType, StyleSheet } from "react-native";
 import React from "react";
 import { Flex, Text } from "native-base";
+import { ViewProps } from "react-native";
 
-export interface MemberItemProps {
+export interface MemberItemProps extends ViewProps {
   image: ImageSourcePropType;
   name: string;
 }
@@ -23,8 +24,8 @@ export default function MemberItem(props: MemberItemProps) {
 const styles = StyleSheet.create({
   wrapper: {
     width: 100,
-    height: 150,
-    flexDirection: 'column'
+    height: 125,
+    justifyContent: "space-between"
   },
   bg: {
     width: 100,
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
   },
   box: {
     width: "100%",
-    height: "100%",
     alignItems: 'center',
     padding: 5
   },
