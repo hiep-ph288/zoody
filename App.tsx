@@ -2,6 +2,8 @@ import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Main from "./Main";
+import { SafeAreaView, Platform, StatusBar, StyleSheet } from "react-native";
 
 // Define the config
 const config = {
@@ -21,11 +23,13 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <Tab.Navigator>
-        {/* <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} /> */}
-      </Tab.Navigator>
-    </NativeBaseProvider>
+    <SafeAreaView style={styles.wrapper}>
+      <NativeBaseProvider>
+        <Main />
+      </NativeBaseProvider>
+    </SafeAreaView>
   );
 }
+const styles = StyleSheet.create({
+  wrapper: { flex: 1, marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0 },
+});
