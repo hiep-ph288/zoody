@@ -1,6 +1,5 @@
 import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Main from "./Main";
 import { SafeAreaView, Platform, StatusBar, StyleSheet } from "react-native";
