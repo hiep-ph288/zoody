@@ -1,18 +1,19 @@
-import { View, ImageBackground, ImageSourcePropType, StyleSheet } from "react-native";
+import { View, ImageBackground, ImageSourcePropType, StyleSheet, StyleProp, ViewStyle } from "react-native";
 import React from "react";
-import { Text } from "native-base";
+import { Image, Text } from "native-base";
 
 export interface MemberImageProps {
   image: ImageSourcePropType;
   name: string;
+  wrapperStyle?: StyleProp<ViewStyle>;
 }
 
 export default function MemberImage(props: MemberImageProps) {
-  const { image, name } = props;
+  const { image, name, wrapperStyle } = props;
 
   return (
-    <View style={styles.wrapper}>
-      <ImageBackground source={image} style={styles.bg} />
+    <View style={[styles.wrapper, wrapperStyle]}>
+      <Image source={image} width="100%" alt="Animal" />
       <View style={styles.box}>
         <Text bold>{name}</Text>
       </View>
@@ -22,15 +23,10 @@ export default function MemberImage(props: MemberImageProps) {
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "90%",
-    height: 300,
-    backgroundColor: "blue",
     borderRadius: 20,
-    overflow: "hidden"
-  },
-  bg: {
+    overflow: "hidden",
     width: "100%",
-    height: 300,
+    height: 275
   },
   box: {
     width: "90%",
