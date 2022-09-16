@@ -4,8 +4,8 @@ import CharacterBox from "./src/components/CharacterBox";
 import MemberImage, { MemberImageProps } from "./src/components/MemberImage";
 
 const data: MemberImageProps[] = [
-  { image: require("./assets/images/tiger.png"), name: "Tiger" },
-  { image: require("./assets/images/red-panda.png"), name: "Bamboo" },
+  { image: require("./assets/images/tiger.png"), name: "Tigers" },
+  { image: require("./assets/images/red-panda.png"), name: "Bamboos" },
 ];
 
 export default function Main() {
