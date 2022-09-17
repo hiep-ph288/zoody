@@ -3,13 +3,13 @@ import React from "react";
 
 export interface CategoryInfoProps {
   image: ImageSourcePropType;
-  quantity: number;
+  quantity: string;
   title: string;
   summary: string;
 }
 
 export default function CategoryInfo(props: CategoryInfoProps) {
-  const {image, quantity, summary, title} = props;
+  const { image, quantity, summary, title } = props;
   return (
     <View>
       <ImageBackground
@@ -36,25 +36,25 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 150,
     position: 'absolute',
-    opacity: 0.8,
+    // opacity: 1,
   },
 
   container: {
     width: '90%',
-    justifyContent:'center',
+    justifyContent: 'center',
     marginHorizontal: '5%',
     marginTop: 15,
   },
 
   title: {
     fontSize: 20,
-          fontWeight: '700',
-          color: 'white'
+    fontWeight: '700',
+    color: 'white'
   },
 
   quantity: {
     fontSize: 13,
-          color: 'white'
+    color: 'white'
   },
 
   summary: {
