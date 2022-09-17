@@ -1,6 +1,8 @@
-import { View, ImageBackground, ImageSourcePropType, StyleSheet, StyleProp, ViewStyle } from "react-native";
+// TODO: Use Carousel
+
+import { ImageSourcePropType, StyleSheet, StyleProp, ViewStyle } from "react-native";
 import React from "react";
-import { Image, Text } from "native-base";
+import { Image, Text, View } from "native-base";
 
 export interface MemberImageProps {
   image: ImageSourcePropType;
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: "hidden",
     width: "100%",
-    height: 275
+    height: 275,
   },
   box: {
     width: "90%",

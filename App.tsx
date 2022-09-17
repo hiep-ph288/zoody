@@ -7,6 +7,7 @@ import Home from "./src/screens/Home";
 import { Ionicons } from "@expo/vector-icons";
 import QuizzHome from "./src/screens/Quizz/QuizzHome";
 import IconBottomTab from "./src/components/IconBottomTab";
+import Practice from "./src/screens/Practices/Practice";
 
 // Define the config
 const config = {
@@ -55,10 +56,10 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator initialRouteName="Home">
           <Tab.Screen name="Home" component={Home} options={options} />
           <Tab.Screen name="Quizz" component={QuizzHome} options={options} />
-          <Tab.Screen name="Practice" component={Home} options={options} />
+          <Tab.Screen name="Practice" component={Practice} options={options} />
           <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
       </NavigationContainer>
