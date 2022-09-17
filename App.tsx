@@ -6,6 +6,7 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
 import Home from "./src/screens/Home";
 import { Ionicons } from "@expo/vector-icons";
+import QuizzHome from "./src/screens/Quizz/QuizzHome";
 
 // Define the config
 const config = {
@@ -60,9 +61,9 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} options={options} />
-          <Tab.Screen name="Quizz" component={Home} />
-          <Tab.Screen name="Practice" component={Home} />
-          <Tab.Screen name="Settings3" component={Home} />
+          <Tab.Screen name="Quizz" component={QuizzHome} />
+          <Tab.Screen name="Settings2" component={Home} />
+          <Tab.Screen name="Test" component={Main} />
         </Tab.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
