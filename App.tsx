@@ -30,7 +30,7 @@ export default function App() {
           <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
           <Tab.Screen name="Settings1" component={Home} />
           <Tab.Screen name="Settings2" component={Home} />
-          <Tab.Screen name="Settings3" component={Home} />
+          <Tab.Screen name="Test" component={Main} />
         </Tab.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
