@@ -20,7 +20,6 @@ export default function Header(props: HeaderProps) {
         height={slideProps ? 250 : 150}
         paddingX="6%"
         justifyContent="flex-start"
-        paddingTop={8}
       >
         <SearchBar />
         <Text textTransform="uppercase" bold fontSize={20} marginTop={6} marginBottom={4} color="white">
