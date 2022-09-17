@@ -11,7 +11,7 @@ const questions = [
 ]
 
 const Quizz = () => {
-  const [status, setStatus] = useState<EStatus[]>([EStatus.IN_CORRECT, EStatus.DISABLE, EStatus.CORRECT])
+  const [status, setStatus] = useState<EStatus[]>([EStatus.NORMAL, EStatus.NORMAL, EStatus.NORMAL])
   const onPress = (i: number) => () => {
     const newStatus = [...status];
     for (let index = 0; index < newStatus.length; index++) {
