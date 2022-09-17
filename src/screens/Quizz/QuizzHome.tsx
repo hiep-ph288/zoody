@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
   textmain:{
     color: '#A1783F',
-    fontSize: 26,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20
   },

@@ -6,6 +6,7 @@ import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation
 import Home from "./src/screens/Home";
 import { Ionicons } from "@expo/vector-icons";
 import QuizzHome from "./src/screens/Quizz/QuizzHome";
+import Quizz from "./src/screens/Quizz/Quizz"
 import IconBottomTab from "./src/components/IconBottomTab";
 
 // Define the config
@@ -57,7 +58,7 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} options={options} />
-          <Tab.Screen name="Quizz" component={QuizzHome} options={options} />
+          <Tab.Screen name="Quizz" component={Quizz} options={options} />
           <Tab.Screen name="Practice" component={Home} options={options} />
           <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
