@@ -7,7 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const data: MemberItemProps[] = [{ image: require("../../assets/images/tiger.png"), name: "Tigers" }];
 
-const statusBarHeight = Platform.OS == "android" ? 0 : 44;
+const statusBarHeight = Platform.OS == "android" ? 8 : 44;
 export default function Home() {
   return (
     <ScrollView width="100%" bg="white">

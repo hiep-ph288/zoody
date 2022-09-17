@@ -2,11 +2,11 @@ import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { BottomTabNavigationOptions, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Main from "./Main";
-import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
 import Home from "./src/screens/Home";
 import { Ionicons } from "@expo/vector-icons";
 import QuizzHome from "./src/screens/Quizz/QuizzHome";
+import IconBottomTab from "./src/components/IconBottomTab";
 
 // Define the config
 const config = {
@@ -25,7 +25,7 @@ declare module "native-base" {
 const Tab = createBottomTabNavigator();
 
 interface TabOptions {
-  route: RouteProp<ParamListBase, "Home">;
+  route: RouteProp<ParamListBase>;
   navigation: any;
 }
 
@@ -38,20 +38,16 @@ interface TabBarIconProps {
 const options = (props: TabOptions): BottomTabNavigationOptions => {
   const { route } = props;
   const tabBarIcon = ({ focused, color, size }: TabBarIconProps) => {
-    let iconName;
-
-    if (route.name === "Home") {
-      iconName = focused ? "ios-information-circle" : "ios-information-circle-outline";
-    } else if (route.name === "Settings") {
-      iconName = focused ? "ios-list-box" : "ios-list";
-    }
-    // You can return any component that you like here!
-    return <Ionicons name={iconName as any} size={size} color={color} />;
+    return <IconBottomTab name={route.name} focused={focused} />;
   };
 
   return {
     tabBarIcon,
-    headerShown: false
+    headerShown: false,
+    tabBarActiveTintColor: "#3D7944",
+    tabBarInactiveTintColor: "#B8B8B8",
+    tabBarLabelStyle: { fontSize: 12 },
+    tabBarStyle: { paddingVertical: 4 },
   };
 };
 
@@ -61,9 +57,9 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} options={options} />
-          <Tab.Screen name="Quizz" component={QuizzHome} />
-          <Tab.Screen name="Settings2" component={Home} />
-          <Tab.Screen name="Test" component={Main} />
+          <Tab.Screen name="Quizz" component={QuizzHome} options={options} />
+          <Tab.Screen name="Practice" component={Home} options={options} />
+          <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
