@@ -7,15 +7,15 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const data: MemberItemProps[] = [{ image: require("../../assets/images/tiger.png"), name: "Tigers" }];
 
-const statusBarHeight = Platform.OS == "android" ? 0 : 44;
+const statusBarHeight = Platform.OS == "android" ? 8 : 44;
 export default function Home() {
   return (
     <ScrollView width="100%" bg="white">
-      <StatusBar barStyle="dark-content" />
+      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
       <View height={statusBarHeight} bg="#3D7944" />
       <Header title="daily animal story" slideProps={data[0]} />
-      <Stack marginTop={220} bg="white">
-        <Text paddingX="6%" fontSize={18} bold>
+      <Stack marginTop={180} bg="white">
+        <Text paddingX={8} fontSize={18} bold>
           OUR'S ANIMALS
         </Text>
         <Image

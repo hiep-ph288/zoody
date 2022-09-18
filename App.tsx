@@ -1,10 +1,14 @@
 import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomTabNavigationOptions, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Main from "./Main";
-import { Platform, StatusBar, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
 import Home from "./src/screens/Home";
+import { Ionicons } from "@expo/vector-icons";
+import QuizzHome from "./src/screens/Quizz/QuizzHome";
+import Quizz from "./src/screens/Quizz/Quizz"
+import IconBottomTab from "./src/components/IconBottomTab";
+import Practice from "./src/screens/Practices/Practice";
 
 // Define the config
 const config = {
@@ -22,24 +26,44 @@ declare module "native-base" {
 // Navigation
 const Tab = createBottomTabNavigator();
 
+interface TabOptions {
+  route: RouteProp<ParamListBase>;
+  navigation: any;
+}
+
+interface TabBarIconProps {
+  focused: boolean;
+  color: string;
+  size: number;
+}
+
+const options = (props: TabOptions): BottomTabNavigationOptions => {
+  const { route } = props;
+  const tabBarIcon = ({ focused, color, size }: TabBarIconProps) => {
+    return <IconBottomTab name={route.name} focused={focused} />;
+  };
+
+  return {
+    tabBarIcon,
+    headerShown: false,
+    tabBarActiveTintColor: "#3D7944",
+    tabBarInactiveTintColor: "#B8B8B8",
+    tabBarLabelStyle: { fontSize: 12 },
+    tabBarStyle: { paddingVertical: 4 },
+  };
+};
+
 export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
-          <Tab.Screen name="Settings1" component={Home} />
-          <Tab.Screen name="Settings2" component={Home} />
-          <Tab.Screen name="Test" component={Main} />
+        <Tab.Navigator initialRouteName="Home">
+          <Tab.Screen name="Home" component={Home} options={options} />
+          <Tab.Screen name="Quizz" component={Quizz} options={options} />
+          <Tab.Screen name="Practice" component={Home} options={options} />
+          <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
   );
 }
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: "red",
-  },
-});

@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ImageBackground } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 import CharacterBox from "./src/components/CharacterBox";
 import MemberItem, { MemberItemProps } from "./src/components/MemberItem";
 import SearchBar from "./src/components/SearchBar";
 import Header from "./src/components/Header";
 import MemberImage from "./src/components/MemberImage";
 import Home from "./src/screens/Home";
+import TextBox, { EStatus } from "./src/components/TextBox";
 import PartSummary, { PartSummaryProps } from "./src/components/PartSummary";
 import CategoryInfo, { CategoryInfoProps } from "./src/components/CategoryInfo";
 import Category from "./src/screens/Category";
@@ -33,6 +34,12 @@ const data: MemberItemProps[] = [
   { image: require("./assets/images/camel-item.png"), name: 'Camel'},
   { image: require("./assets/images/monkey-item.png"), name: 'Monkey'},
 ];
+
+const questions = [
+  "Con trung",
+  "Vu",
+  "De trung"
+]
 
 export default function Main() {
   // return <PartSummary {...data[0]} />;
