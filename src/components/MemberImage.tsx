@@ -1,12 +1,10 @@
-// TODO: Use Carousel
-
 import { ImageSourcePropType, StyleSheet, StyleProp, ViewStyle } from "react-native";
 import React from "react";
 import { Image, Text, View } from "native-base";
 
 export interface MemberImageProps {
   image: ImageSourcePropType;
-  name: string;
+  name?: string;
   wrapperStyle?: StyleProp<ViewStyle>;
 }
 
@@ -16,9 +14,11 @@ export default function MemberImage(props: MemberImageProps) {
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
       <Image source={image} width="100%" alt="Animal" />
-      <View style={styles.box}>
-        <Text bold>{name}</Text>
-      </View>
+      {name && (
+        <View style={styles.box}>
+          <Text bold>{name}</Text>
+        </View>
+      )}
     </View>
   );
 }

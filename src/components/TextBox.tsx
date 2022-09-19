@@ -20,10 +20,10 @@ export interface TextBoxProps extends TouchableOpacityProps {
 }
 
 const TextBox = (props: TextBoxProps) => {
-  const { status, content, ...rest } = props;
+  const { status, content, style, ...rest } = props;
   let extraBox = {};
   let extraText = {};
-
+  
   switch (status) {
     case EStatus.CORRECT:
       extraBox = styles.correctBox;
@@ -43,7 +43,7 @@ const TextBox = (props: TextBoxProps) => {
       break;
   }
   return (
-    <TouchableOpacity style={styles.button} {...rest}>
+    <TouchableOpacity style={[styles.button, style]} {...rest}>
       <View style={[styles.box, extraBox]}>
         <Text style={[styles.text, extraText]}>{content}</Text>
       </View>
