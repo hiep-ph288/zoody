@@ -20,7 +20,7 @@ const config = {
 };
 
 // extend the theme
-export const theme = extendTheme({ config, colors: { mainGreen: "#3D7944" } });
+export const theme = extendTheme({ config });
 type MyThemeType = typeof theme;
 declare module "native-base" {
   interface ICustomTheme extends MyThemeType {}
