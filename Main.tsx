@@ -9,12 +9,18 @@ import Home from "./src/screens/Home";
 import TextBox, { EStatus } from "./src/components/TextBox";
 import PartSummary, { PartSummaryProps } from "./src/components/PartSummary";
 import CategoryInfo, { CategoryInfoProps } from "./src/components/CategoryInfo";
+import Category from "./src/screens/Category";
+import { Stack } from "native-base";
 
 
-const data: PartSummaryProps[] = [
-  { image: require("./assets/images/tiger11.png"), title: "Bộ phận", summary: "Chức năng cơ bản của bộ phận/giống/điểm đặc biệt muốn đề cập.", icon: require("./assets/images/vecter.png")},
-  // { image: require("./assets/images/lion-item.png"), name: "Lion" },
-];
+// const data: CategoryInfoProps[] = [
+//   {
+//     image: require("./assets/images/beetles-home.png"),
+//     quantity: '60 loai',
+//     title: 'Insect',
+//     summary: 'A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal'
+//   }
+// ];
 
 const questions = [
   "Con trung",
@@ -23,20 +29,13 @@ const questions = [
 ]
 
 export default function Main() {
-  const [status, setStatus] = useState<EStatus[]>([EStatus.IN_CORRECT, EStatus.DISABLE, EStatus.CORRECT])
-  const onPress = (i: number) => () => {
-    const newStatus = [...status];
-    for (let index = 0; index < newStatus.length; index++) {
-      newStatus[index] = EStatus.NORMAL;
-    }
-    newStatus[i] = EStatus.DISABLE;
-    setStatus(newStatus)
-  }
-  console.log(status);
-  
-  return <View>
-    {questions.map((ques, i) => <TextBox key={ques} status={status[i]} onPress={onPress(i)} content={ques} />)}
-  </View>;
+  // return <PartSummary {...data[0]} />;
+  return (
+  <Stack>
+      <Home />
+      {/* <CategoryInfo {...data[0]} />  */}
+  </Stack>
+  )
 }
 
 const styles = StyleSheet.create({});
