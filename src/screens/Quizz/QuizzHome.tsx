@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, StatusBar } from "react-native";
 import { Image, Stack } from "native-base";
 import React from "react";
-import { color } from "native-base/lib/typescript/theme/styled-system";
 import { useNavigation } from "@react-navigation/native";
 
 const QuizzHome = () => {
   const navigation = useNavigation<any>();
   return (
     <Stack style={{ height: "100%" }}>
+      <StatusBar barStyle="dark-content" />
       <Image
         source={require("../../../assets/images/quiz1-bg.png")}
         width="40%"
