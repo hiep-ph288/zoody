@@ -20,9 +20,9 @@ const Stack = createStackNavigator<HomeStackParams & ParamListBase>();
 export default function HomeStack() {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Category" component={Category} />
-      <Stack.Screen name="MemberDetail" component={MemberDetail} />
+      <Stack.Screen name="Homes" component={Home} options={{headerShown: false}} />
+      <Stack.Screen name="Category" component={Category} options={{headerShown: false}} />
+      <Stack.Screen name="MemberDetail" component={MemberDetail} options={{headerShown: false}} />
     </Stack.Navigator>
   );
 }
