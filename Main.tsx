@@ -13,27 +13,14 @@ import Category from "./src/screens/Category";
 import { Stack } from "native-base";
 
 
-const data: MemberItemProps[] = [
-  { image: require("./assets/images/tiger-item.png"), name: 'Tiger'},
-  { image: require("./assets/images/lion-item.png"), name: 'Lion'},
-  { image: require("./assets/images/zebra-item.png"), name: 'Zebra'},
-  { image: require("./assets/images/elephants-item.png"), name: 'Elephant'},
-  { image: require("./assets/images/goat-item.png"), name: 'Goat'},
-  { image: require("./assets/images/fox-item.png"), name: 'Fox'},
-  { image: require("./assets/images/wolf-item.png"), name: 'Wolf'},
-  { image: require("./assets/images/camel-item.png"), name: 'Camel'},
-  { image: require("./assets/images/monkey-item.png"), name: 'Monkey'},
-  
-  { image: require("./assets/images/tiger-item.png"), name: 'Tiger'},
-  { image: require("./assets/images/lion-item.png"), name: 'Lion'},
-  { image: require("./assets/images/zebra-item.png"), name: 'Zebra'},
-  { image: require("./assets/images/elephants-item.png"), name: 'Elephant'},
-  { image: require("./assets/images/goat-item.png"), name: 'Goat'},
-  { image: require("./assets/images/fox-item.png"), name: 'Fox'},
-  { image: require("./assets/images/wolf-item.png"), name: 'Wolf'},
-  { image: require("./assets/images/camel-item.png"), name: 'Camel'},
-  { image: require("./assets/images/monkey-item.png"), name: 'Monkey'},
-];
+// const data: CategoryInfoProps[] = [
+//   {
+//     image: require("./assets/images/beetles-home.png"),
+//     quantity: '60 loai',
+//     title: 'Insect',
+//     summary: 'A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal'
+//   }
+// ];
 
 const questions = [
   "Con trung",
@@ -45,7 +32,8 @@ export default function Main() {
   // return <PartSummary {...data[0]} />;
   return (
   <Stack>
-    <Category />
+      <Home />
+      {/* <CategoryInfo {...data[0]} />  */}
   </Stack>
   )
 }

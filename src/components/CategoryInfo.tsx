@@ -11,10 +11,11 @@ export interface CategoryInfoProps {
 export default function CategoryInfo(props: CategoryInfoProps) {
   const { image, quantity, summary, title } = props;
   return (
-    <View>
+    <View style={styles.header}>
       <ImageBackground
         source={image}
         style={styles.insectImage}
+        borderRadius={15}
       />
       <View style={styles.container}>
         <Text style={styles.title}>
@@ -32,34 +33,45 @@ export default function CategoryInfo(props: CategoryInfoProps) {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    marginTop: 20,
+  },
+
   insectImage: {
     width: '100%',
-    height: 150,
-    position: 'absolute',
-    // opacity: 1,
+    height: 160,
+    position: 'relative',
+    right: -20,
+    borderBottomLeftRadius: 5,
   },
 
   container: {
     width: '90%',
     justifyContent: 'center',
     marginHorizontal: '5%',
-    marginTop: 15,
+    marginTop: 25,
+    position: 'absolute',
+    left: 25,
   },
 
   title: {
     fontSize: 20,
     fontWeight: '700',
-    color: 'white'
+    color: 'white',
   },
 
   quantity: {
     fontSize: 13,
-    color: 'white'
+    color: 'white',
   },
 
   summary: {
-    fontSize: 11.5,
+    fontSize: 10,
     color: 'white',
-    width: '70%'
+    width: '70%',
+    lineHeight: 12.19,
+    letterSpacing: 1,
+    marginTop: 10,
+    fontWeight: '700'
   },
 });

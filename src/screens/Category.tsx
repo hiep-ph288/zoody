@@ -28,10 +28,9 @@ const data: MemberItemProps[] = [
 
 export default function Category() {
   return (
-    <Stack>
-      <Header title='MAMMALS' />
+    <Stack style={{marginBottom: 300}}>
+      <Header title='MAMMALS'/>
       <ScrollView>
-        <Category />
         <View style={{ flexDirection: 'row', width: '95%', marginHorizontal: '2.5%', flexWrap: 'wrap', marginTop: 30 }}>
           {data.map(info => (
             <View style={{ marginHorizontal: 15, marginVertical: 15 }}>
@@ -39,7 +38,7 @@ export default function Category() {
             </View>))}
         </View>
 
-        <View style={{ width: '100%', alignItems: 'center', marginTop: 20, marginBottom: 50 }}>
+        <View style={{ width: '100%', alignItems: 'center', marginTop: 20, marginBottom: 50}}>
           <TouchableOpacity style={{ backgroundColor: '#3D7944', width: 280, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingVertical: 10 }}>
             <Text style={{ color: 'white', marginHorizontal: 10 }}>Xem thêm</Text>
             <ImageBackground source={require('../../assets/images/plus.png')} style={{ width: 10, height: 10 }} />
