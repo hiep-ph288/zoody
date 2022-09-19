@@ -1,23 +1,23 @@
-import { View, ImageBackground, ImageSourcePropType, StyleSheet } from "react-native";
+import { View, ImageBackground, ImageSourcePropType, StyleSheet, Touchable, TouchableOpacity } from "react-native";
 import React from "react";
-import { Flex, Text } from "native-base";
-import { ViewProps } from "react-native";
+import { Text } from "native-base";
+import { TouchableOpacityProps } from "react-native";
 
-export interface MemberItemProps extends ViewProps {
+export interface MemberItemProps extends TouchableOpacityProps {
   image: ImageSourcePropType;
   name: string;
 }
 
 export default function MemberItem(props: MemberItemProps) {
-  const { image, name } = props;
+  const { image, name, ...rest } = props;
 
   return (
-    <View style={styles.wrapper}>
+    <TouchableOpacity style={styles.wrapper} {...rest}>
       <ImageBackground source={image} style={styles.bg} />
       <View style={styles.box}>
         <Text>{name}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

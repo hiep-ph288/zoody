@@ -11,12 +11,12 @@ import React from "react";
 import { Stack, View } from "native-base";
 import Header from "../components/Header";
 import MemberItem from "../components/MemberItem";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { categoryData } from "../db";
 
 export default function Category() {
   const route = useRoute();
-  console.log(route.params);
+  const navigation = useNavigation<any>()
 
   return (
     <Stack>
@@ -26,7 +26,7 @@ export default function Category() {
         <View style={{ flexDirection: "row", width: "95%", marginHorizontal: "2.5%", flexWrap: "wrap", marginTop: 4 }}>
           {categoryData["mammals"].map((info, index) => (
             <View style={{ marginHorizontal: 15, marginVertical: 15 }} key={info.name + String(index)}>
-              <MemberItem {...info} />
+              <MemberItem {...info} onPress={() => navigation.navigate("MemberDetail")} />
             </View>
           ))}
         </View>

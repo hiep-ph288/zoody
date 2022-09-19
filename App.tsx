@@ -11,6 +11,7 @@ import QuizzResult from "./src/screens/Quizz/QuizzResult"
 import IconBottomTab from "./src/components/IconBottomTab";
 import Practice from "./src/screens/Practices/Practice";
 import HomeStack from "./src/navigations/HomeStack";
+import QuizzStack from "./src/navigations/QuizzStack";
 
 // Define the config
 const config = {
@@ -61,7 +62,7 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator initialRouteName="Home">
           <Tab.Screen name="Home" component={HomeStack} options={options} />
-          <Tab.Screen name="Quizz" component={QuizzResult} options={options} />
+          <Tab.Screen name="Quizz" component={QuizzStack} options={options} />
           <Tab.Screen name="Practice" component={Home} options={options} />
           <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
