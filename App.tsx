@@ -39,7 +39,7 @@ interface TabBarIconProps {
 
 const options = (props: TabOptions): BottomTabNavigationOptions => {
   const { route } = props;
-  const tabBarIcon = ({ focused, color, size }: TabBarIconProps) => {
+  const tabBarIcon = ({ focused }: TabBarIconProps) => {
     return <IconBottomTab name={route.name} focused={focused} />;
   };
 

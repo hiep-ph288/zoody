@@ -3,7 +3,6 @@ import React from "react";
 import { FlatList, Image, ScrollView, Stack, Text, View } from "native-base";
 import Header from "../components/Header";
 import { MemberItemProps } from "../components/MemberItem";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const data: MemberItemProps[] = [{ image: require("../../assets/images/tiger.png"), name: "Tigers" }];
 
