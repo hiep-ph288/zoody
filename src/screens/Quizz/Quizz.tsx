@@ -28,10 +28,8 @@ const Quizz = () => {
         <Image style={{width: '80%', height: "30%"}} source={require('../../../assets/images/dolphin.png')}/>
         <Text style={styles.text_ques}>Câu 1: Cá heo thuộc loại động vật nào?</Text>
       </View>
-      <View style={{
-        width: 200, height: 400, backgroundColor: 'red'
-      }}>
-      {questions.map((ques, i) => <TextBox key={ques} status={status[i]} onPress={onPress(i)} content={ques} />)}
+      <View>
+        {questions.map((ques, i) => <TextBox key={ques} status={status[i]} onPress={onPress(i)} content={ques} />)}
       </View>
       <Image
           source={require("../../../assets/images/quiz-bg.png")}
