@@ -6,7 +6,7 @@ import { MemberItemProps } from "../components/MemberItem";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CategoryInfo, { CategoryInfoProps } from "../components/CategoryInfo";
 
-// const data: MemberItemProps[] = [{ image: require("../../assets/images/tiger.png"), name: "Tigers" }];
+const dataSlide: MemberItemProps[] = [{ image: require("../../assets/images/tiger.png"), name: "Tigers" }];
 
 const data: CategoryInfoProps[] = [
   {
@@ -58,7 +58,7 @@ export default function Home() {
     <ScrollView width="100%" bg="white">
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
       <View height={statusBarHeight} bg="#3D7944" />
-      <Header title="daily animal story" slideProps={data[0]} />
+      <Header title="daily animal story" slideProps={dataSlide[0]} />
       <Stack marginTop={180} bg="white">
         <Text paddingX={8} fontSize={18} bold>
           OUR'S ANIMALS
