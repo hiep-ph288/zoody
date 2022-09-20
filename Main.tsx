@@ -11,15 +11,30 @@ import PartSummary, { PartSummaryProps } from "./src/components/PartSummary";
 import CategoryInfo, { CategoryInfoProps } from "./src/components/CategoryInfo";
 import Category from "./src/screens/Category";
 import { Stack } from "native-base";
+import MemberDetail from "./src/screens/MemberDetail";
 
 
-// const data: CategoryInfoProps[] = [
+// const data: MemberDetailProps[] = [
 //   {
-//     image: require("./assets/images/beetles-home.png"),
-//     quantity: '60 loai',
-//     title: 'Insect',
-//     summary: 'A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal'
-//   }
+//     icon: require("./assets/images/weight.png"),
+//     text: '90 - 310 kg',
+//   },
+
+  // {
+  //   icon: require("./assets/images/lenght.png"),
+  //   text: '2,5 – 3,9 m',
+  // },
+
+  // {
+  //   icon: require("./assets/images/time.png"),
+  //   text: '8 – 10 years',
+  // },
+
+  // {
+  //   icon: require("./assets/images/Group.png"),
+  //   text: '96 km/h',
+  // },
+
 // ];
 
 const questions = [
@@ -32,8 +47,7 @@ export default function Main() {
   // return <PartSummary {...data[0]} />;
   return (
   <Stack>
-      <Home />
-      {/* <CategoryInfo {...data[0]} />  */}
+      <MemberDetail />
   </Stack>
   )
 }
