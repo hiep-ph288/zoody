@@ -2,7 +2,9 @@ import { View, Text, StyleSheet, Dimensions, ImageSourcePropType, ImageBackgroun
 import React, { useState } from 'react';
 import Carousel from 'react-native-snap-carousel';
 import MemberImage, { MemberImageProps } from "../components/MemberImage";
-import { HStack, Box, Stack } from 'native-base'
+import { HStack, Box, Stack } from 'native-base';
+import Slide from '../components/Slide';
+import { memberDetailData } from '../db/memberdetail';
 
 // export interface MemberDetailProps {
 //   icon: ImageSourcePropType,
@@ -13,7 +15,7 @@ export default function MemberDetail() {
   // const {icon,text} = props;
   return (
     <View>
-      
+      <Slide data={memberDetailData["zebra"]["slide"]}/>
       <View style={{ width: '90%', marginHorizontal: '5%' }}>
         <Text style={{ marginBottom: 20, fontSize: 16, fontWeight: '600' }}>
           Physical characteristic
