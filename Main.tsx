@@ -13,43 +13,34 @@ import Category from "./src/screens/Category";
 import { Stack } from "native-base";
 import MemberDetail from "./src/screens/MemberDetail";
 
-
 // const data: MemberDetailProps[] = [
 //   {
 //     icon: require("./assets/images/weight.png"),
 //     text: '90 - 310 kg',
 //   },
 
-  // {
-  //   icon: require("./assets/images/lenght.png"),
-  //   text: '2,5 – 3,9 m',
-  // },
+// {
+//   icon: require("./assets/images/lenght.png"),
+//   text: '2,5 – 3,9 m',
+// },
 
-  // {
-  //   icon: require("./assets/images/time.png"),
-  //   text: '8 – 10 years',
-  // },
+// {
+//   icon: require("./assets/images/time.png"),
+//   text: '8 – 10 years',
+// },
 
-  // {
-  //   icon: require("./assets/images/Group.png"),
-  //   text: '96 km/h',
-  // },
+// {
+//   icon: require("./assets/images/Group.png"),
+//   text: '96 km/h',
+// },
 
 // ];
 
-const questions = [
-  "Con trung",
-  "Vu",
-  "De trung"
-]
+const questions = ["Con trung", "Vu", "De trung"];
 
 export default function Main() {
   // return <PartSummary {...data[0]} />;
-  return (
-  <Stack>
-      <MemberDetail />
-  </Stack>
-  )
+  return <MemberDetail />;
 }
 
 const styles = StyleSheet.create({});

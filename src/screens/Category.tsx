@@ -1,12 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  ImageBackground,
-  Dimensions,
-  Platform,
-} from "react-native";
+import { StyleSheet, Text, ScrollView, TouchableOpacity, ImageBackground, Dimensions, Platform } from "react-native";
 import React from "react";
 import { Stack, View } from "native-base";
 import Header from "../components/Header";
@@ -16,7 +8,7 @@ import { categoryData } from "../db";
 
 export default function Category() {
   const route = useRoute();
-  const navigation = useNavigation<any>()
+  const navigation = useNavigation<any>();
 
   return (
     <Stack>
@@ -26,7 +18,10 @@ export default function Category() {
         <View style={{ flexDirection: "row", width: "95%", marginHorizontal: "2.5%", flexWrap: "wrap", marginTop: 4 }}>
           {categoryData["mammals"].map((info, index) => (
             <View style={{ marginHorizontal: 15, marginVertical: 15 }} key={info.name + String(index)}>
-              <MemberItem {...info} onPress={() => navigation.navigate("MemberDetail")} />
+              <MemberItem
+                {...info}
+                onPress={() => navigation.navigate("MemberDetail", { name: info.name.toLowerCase() })}
+              />
             </View>
           ))}
         </View>

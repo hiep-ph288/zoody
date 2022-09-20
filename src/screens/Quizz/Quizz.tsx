@@ -2,17 +2,15 @@ import { StyleSheet, Text, Dimensions, Platform } from "react-native";
 import { Button, Image, ScrollView, Stack, View } from "native-base";
 import React, { useState } from "react";
 import TextBox, { EStatus } from "../../components/TextBox";
+import { useNavigation } from "@react-navigation/native";
 
 const questions = ["Côn trùng", "Động vật có vú", "Động vật đẻ trứng"];
 const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
 
 const bgHeight = Math.round(((5 / 4) * imgWidth) / 6);
 const Quizz = () => {
-  const [status, setStatus] = useState<EStatus[]>([
-    EStatus.NORMAL,
-    EStatus.NORMAL,
-    EStatus.NORMAL,
-  ]);
+  const [status, setStatus] = useState<EStatus[]>([EStatus.NORMAL, EStatus.NORMAL, EStatus.NORMAL]);
+  const navigation = useNavigation<any>();
   const onPress = (i: number) => () => {
     const newStatus = [...status];
     for (let index = 0; index < newStatus.length; index++) {
@@ -35,30 +33,41 @@ const Quizz = () => {
           source={require("../../../assets/images/dolphin.png")}
           alt="Question"
         />
-        <Text style={styles.text_ques}>
-          Câu 1: Cá heo thuộc loại động vật nào?
-        </Text>
+        <Text style={styles.text_ques}>Câu 1: Cá heo thuộc loại động vật nào?</Text>
       </View>
       <View>
         {questions.map((ques, i) => (
-          <TextBox
-            key={ques}
-            status={status[i]}
-            onPress={onPress(i)}
-            content={ques}
-            style={styles.btn}
-          />
+          <TextBox key={ques} status={status[i]} onPress={onPress(i)} content={ques} style={styles.btn} />
         ))}
       </View>
-      <View style={{ height: 50, justifyContent: 'center', marginVertical: 20 }} flexDirection="row">
-        <Button style={{
-          backgroundColor: '#FFFFFF', borderColor: '#3D7944', borderWidth: 1, borderRadius: 10, marginHorizontal: 5
-        }}><Text style={{
-          color: '#3D7944'
-        }}>Dừng lại</Text></Button>
-        <Button style={{
-          backgroundColor: '#3D7944', borderRadius: 10, marginHorizontal: 5
-        }}>Tiếp tục</Button>
+      <View style={{ height: 50, justifyContent: "center", marginVertical: 20 }} flexDirection="row">
+        <Button
+          style={{
+            backgroundColor: "#FFFFFF",
+            borderColor: "#3D7944",
+            borderWidth: 1,
+            borderRadius: 10,
+            marginHorizontal: 5,
+          }}
+        >
+          <Text
+            style={{
+              color: "#3D7944",
+            }}
+          >
+            Dừng lại
+          </Text>
+        </Button>
+        <Button
+          style={{
+            backgroundColor: "#3D7944",
+            borderRadius: 10,
+            marginHorizontal: 5,
+          }}
+          onPress={() => navigation.navigate("ResultScreen")}
+        >
+          Tiếp tục
+        </Button>
       </View>
       <Image
         source={require("../../../assets/images/quiz-bg.png")}
