@@ -13,7 +13,7 @@ export default function Home() {
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
       <View height={Platform.OS == "android" ? 8 : 44} bg="#3D7944" />
       <Header title="daily animal story" showSlide />
-      <Stack marginTop={180} bg="white">
+      <Stack marginTop={8} bg="white">
         <Text paddingX={8} fontSize={18} bold>
           OUR'S ANIMALS
         </Text>
