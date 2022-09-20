@@ -1,5 +1,7 @@
+import { Image } from "react-native";
+
 export interface QuizzData {
-  image: any;
+  image: Image;
   ques: string;
   choose: string[];
   ans: number;
