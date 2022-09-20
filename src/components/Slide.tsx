@@ -18,7 +18,7 @@ export default function Slide(props: SlideProps) {
     <View style={styles.memberImageWrapper}>
       <Carousel
         data={data}
-        renderItem={({ item, index }) => <MemberImage {...item} key={item.name} />}
+        renderItem={({ item, index }) => <MemberImage {...item} key={item.name ? item.name : `item${index}`} />}
         itemWidth={Math.round(screenWidth * 0.8)}
         sliderWidth={screenWidth}
         onSnapToItem={(index) => setSlideIndex(index)}
