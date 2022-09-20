@@ -7,7 +7,6 @@ import Home from "./src/screens/Home";
 import { Ionicons } from "@expo/vector-icons";
 import QuizzHome from "./src/screens/Quizz/QuizzHome";
 import Quizz from "./src/screens/Quizz/Quizz"
-import QuizzResult from "./src/screens/Quizz/QuizzResult"
 import IconBottomTab from "./src/components/IconBottomTab";
 import Practice from "./src/screens/Practices/Practice";
 import HomeStack from "./src/navigations/HomeStack";
