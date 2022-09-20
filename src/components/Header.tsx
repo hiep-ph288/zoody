@@ -14,7 +14,7 @@ export default function Header(props: HeaderProps) {
   const { showSlide, title } = props;
 
   return (
-    <View style={{height: 420}}>
+    <View style={{height: showSlide ? 420 : 132}}>
       <Stack
         bg="#3D7944"
         width="100%"
