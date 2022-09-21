@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+  StatusBar,
+} from "react-native";
 import { Image, Stack } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -19,7 +26,10 @@ const QuizzHome = () => {
       />
       <View style={styles.container}>
         <Text style={styles.textmain}>ZOODY'S QUIZ</Text>
-        <TouchableOpacity style={styles.box} onPress={() => navigation.navigate("QuizzScreen")}>
+        <TouchableOpacity
+          style={styles.box}
+          onPress={() => navigation.navigate("QuizzScreen")}
+        >
           <Text style={styles.text}>Dễ</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.box}>

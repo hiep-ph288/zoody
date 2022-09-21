@@ -1,4 +1,4 @@
-import { Dimensions, Platform, StatusBar } from "react-native";
+import { Dimensions, Platform, StatusBar, View } from "react-native";
 import React from "react";
 import SearchBar from "./SearchBar";
 import { Stack, Text } from "native-base";
@@ -14,7 +14,7 @@ export default function Header(props: HeaderProps) {
   const { showSlide, title } = props;
 
   return (
-    <>
+    <View style={{height: showSlide ? 420 : 132}}>
       <Stack
         bg="#3D7944"
         width="100%"
@@ -28,8 +28,8 @@ export default function Header(props: HeaderProps) {
         <Text textTransform="uppercase" bold fontSize={20} marginTop={6} marginBottom={4} color="white">
           {title}
         </Text>
-        {showSlide && <Slide data={headerSlide} />}
       </Stack>
-    </>
+      {showSlide && <Slide style={{ position: "absolute", bottom: 0 }} data={headerSlide} />}
+    </View>
   );
 }

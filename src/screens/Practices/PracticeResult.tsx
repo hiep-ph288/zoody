@@ -2,10 +2,10 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image, Stack } from "native-base";
 
-const Result = () => {
+const PracticeResult = () => {
   return (
     <View style={styles.bg}>
-      <Text style={styles.text__main}>ZOODY'S QUIZ</Text>
+      <Text style={styles.text__main}>PRACTICE WITH ZOODY</Text>
       <Text style={styles.text__level}>Mức độ: Dễ</Text>
       <View style={styles.container}>
         <Text style={styles.text__comment}>GREAT JOB</Text>
@@ -27,9 +27,9 @@ const Result = () => {
       </View>
 
       <Image
-        source={require("../../assets/images/quizresult-bg.png")}
-        width={Math.round(Dimensions.get("screen").height * 0.25)}
-        height={Math.round(Dimensions.get("screen").height * 0.25)}
+        source={require("../../../assets/images/crocodile-bg.png")}
+        width={Math.round(Dimensions.get("screen").height * 0.3)}
+        height={Math.round(Dimensions.get("screen").height * 0.3)}
         alt="quizresult-bg"
         position="absolute"
         resizeMode="stretch"
@@ -40,7 +40,7 @@ const Result = () => {
   );
 };
 
-export default Result;
+export default PracticeResult;
 
 const styles = StyleSheet.create({
   bg: {
