@@ -17,25 +17,26 @@ export default function PartSummary(props: PartSummaryProps) {
       borderRadius: 10,
       backgroundColor:  '#3D7944',
       flexDirection: 'row',
+      marginVertical: 10,
     }}>
       <ImageBackground 
         source={image}
         style={{
-          width: 190,
+          width: 195,
           height: '100%',
         }}
       />
       <View style={{flexDirection: 'row'}}>
-        <View style={{width: '55%', marginLeft: 20, marginRight: 5}}>
-          <Text style={{color:'white', fontSize: 20, fontWeight: '700', marginTop: 25, marginBottom: 15}}>{title}</Text>
-          <Text style={{color:'white', fontSize: 17}}>{summary}</Text>  
+        <View style={{width: '55%', marginLeft: 15, marginRight: 5}}>
+          <Text style={{color:'white', fontSize: 20, fontWeight: '700', marginTop: 25, marginBottom: 15,}}>{title}</Text>
+          <Text style={{color:'white', fontSize: 14}}>{summary}</Text>  
         </View> 
         <ImageBackground 
         source={icon}
         style={{
-          width: 30,
-          height: 30,
-          marginTop: 90
+          width: 10,
+          height: 20,
+          marginTop: 90,
         }}
       />
       </View>
