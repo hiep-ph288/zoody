@@ -10,6 +10,17 @@ import { Image, Stack } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
+interface LevelInfo {
+  text: string;
+  level: string;
+}
+
+const levels: LevelInfo[] = [
+  { text: "Dễ", level: "easy" },
+  { text: "Trung bình", level: "medium" },
+  { text: "Khó", level: "hard" },
+];
+
 const QuizzHome = () => {
   const navigation = useNavigation<any>();
   return (
@@ -26,18 +37,17 @@ const QuizzHome = () => {
       />
       <View style={styles.container}>
         <Text style={styles.textmain}>ZOODY'S QUIZ</Text>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => navigation.navigate("QuizzScreen")}
-        >
-          <Text style={styles.text}>Dễ</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
-          <Text style={styles.text}>Trung bình</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
-          <Text style={styles.text}>Khó</Text>
-        </TouchableOpacity>
+        {levels.map((info) => (
+          <TouchableOpacity
+            style={styles.box}
+            key={info.level}
+            onPress={() =>
+              navigation.navigate("QuizzScreen", { level: info.level })
+            }
+          >
+            <Text style={styles.text}>{info.text}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
       <Image
         source={require("../../../assets/images/quiz2-bg.png")}

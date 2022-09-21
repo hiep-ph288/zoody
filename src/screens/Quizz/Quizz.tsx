@@ -3,52 +3,81 @@ import { Button, Image, ScrollView, Stack, View } from "native-base";
 import React, { useState } from "react";
 import TextBox, { EStatus } from "../../components/TextBox";
 import { useNavigation } from "@react-navigation/native";
+import { quizzData } from "../../db/quizz";
+import { useRoute } from "@react-navigation/native";
 
-const questions = ["Côn trùng", "Động vật có vú", "Động vật đẻ trứng"];
+// const questions = ["Côn trùng", "Động vật có vú", "Động vật đẻ trứng"];
 const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
 
 const bgHeight = Math.round(((5 / 4) * imgWidth) / 6);
+
+const show: { [key: string]: string } = {
+  easy: "Dễ",
+  medium: "Trung bình",
+  hard: "Khó",
+};
+
 const Quizz = () => {
-  const [status, setStatus] = useState<EStatus[]>([EStatus.NORMAL, EStatus.NORMAL, EStatus.NORMAL]);
+  const [status, setStatus] = useState<EStatus[]>([
+    EStatus.NORMAL,
+    EStatus.NORMAL,
+    EStatus.NORMAL,
+  ]);
+
+  const route = useRoute<any>();
   const navigation = useNavigation<any>();
+  const [currQues, setCurrQues] = useState(0);
+  const level: string = route.params.level ? route.params.level : "easy";
+
   const onPress = (i: number) => () => {
     const newStatus = [...status];
     for (let index = 0; index < newStatus.length; index++) {
       newStatus[index] = EStatus.NORMAL;
     }
-    newStatus[i] = EStatus.DISABLE;
+    newStatus[i] = EStatus.CORRECT;
     setStatus(newStatus);
   };
+
+  const onNext = () => {
+    if (currQues < quizzData[level].length - 1) setCurrQues(currQues + 1);
+    else navigation.navigate("ResultScreen");
+  };
+  console.log(quizzData[level][currQues]);
+  
   return (
     <Stack style={{ height: "100%" }}>
       <View height={Platform.OS == "android" ? 0 : 44} bg="#3D7944" />
       <View style={styles.container}>
         <Text style={styles.text_main}>ZOODY'S QUIZ</Text>
-        <Text style={styles.text_level}>Mức độ: Dễ</Text>
+        <Text style={styles.text_level}>Mức độ: {show[level]}</Text>
         <Image
           style={{
             width: imgWidth,
             height: Math.round((159 / 290) * imgWidth),
           }}
-          source={require("../../../assets/images/dolphin.png")}
+          source={quizzData[level][currQues].image}
           alt="Question"
         />
-        <Text style={styles.text_ques}>Câu 1: Cá heo thuộc loại động vật nào?</Text>
+        <Text style={styles.text_ques}>{quizzData[level][currQues].ques}</Text>
       </View>
       <View>
-        {questions.map((ques, i) => (
-          <TextBox key={ques} status={status[i]} onPress={onPress(i)} content={ques} style={styles.btn} />
+        {quizzData[level][currQues]["choose"].map((item, i) => (
+          <TextBox
+            key={item}
+            status={status[i]}
+            onPress={onPress(i)}
+            content={item}
+            style={styles.btn}
+          />
         ))}
       </View>
-      <View style={{ height: 50, justifyContent: "center", marginVertical: 20 }} flexDirection="row">
+      <View
+        style={{ height: 50, justifyContent: "center", marginVertical: 20 }}
+        flexDirection="row"
+      >
         <Button
-          style={{
-            backgroundColor: "#FFFFFF",
-            borderColor: "#3D7944",
-            borderWidth: 1,
-            borderRadius: 10,
-            marginHorizontal: 5,
-          }}
+          style={styles.btn__stop}
+          onPress={() => navigation.navigate("QuizzHomeScreen")}
         >
           <Text
             style={{
@@ -58,15 +87,8 @@ const Quizz = () => {
             Dừng lại
           </Text>
         </Button>
-        <Button
-          style={{
-            backgroundColor: "#3D7944",
-            borderRadius: 10,
-            marginHorizontal: 5,
-          }}
-          onPress={() => navigation.navigate("ResultScreen")}
-        >
-          Tiếp tục
+        <Button style={styles.btn__continue} onPress={onNext}>
+          {currQues === quizzData[level].length - 1 ? "Kết thúc" : "Tiếp tục"}
         </Button>
       </View>
       <Image
@@ -120,5 +142,17 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginBottom: 8,
+  },
+  btn__stop: {
+    backgroundColor: "#FFFFFF",
+    borderColor: "#3D7944",
+    borderWidth: 1,
+    borderRadius: 10,
+    marginHorizontal: 5,
+  },
+  btn__continue: {
+    backgroundColor: "#3D7944",
+    borderRadius: 10,
+    marginHorizontal: 5,
   },
 });

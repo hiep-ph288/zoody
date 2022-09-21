@@ -64,7 +64,7 @@ export default function App() {
         <Tab.Navigator initialRouteName="Home">
           <Tab.Screen name="Home" component={HomeStack} options={options} />
           <Tab.Screen name="Quizz" component={QuizzStack} options={options} />
-          <Tab.Screen name="Practice" component={PracticeResult} options={options} />
+          <Tab.Screen name="Practice" component={Practice} options={options} />
           <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
       </NavigationContainer>
