@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, ImageSourcePropType, ImageBackground } from "react-native";
+import { View, Text, StyleSheet, Dimensions, ImageSourcePropType, ImageBackground, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
 import MemberImage, { MemberImageProps } from "../components/MemberImage";
@@ -7,19 +7,26 @@ import Slide from "../components/Slide";
 import { memberDetailData } from "../db/memberdetail";
 import { useRoute } from "@react-navigation/native";
 import PartSummary from "../components/PartSummary";
+import { useNavigation } from "@react-navigation/native";
 
 export default function MemberDetail() {
   const route = useRoute<any>();
   // console.log(route.params);
+  const navigation = useNavigation();
 
   const name = route.params.name ? route.params.name : "zebra";
   return (
     <View>
       <ScrollView>
-        <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%', marginHorizontal: '5%', paddingVertical: 15}}>
+        <TouchableOpacity 
+          style={{ flexDirection: 'row', alignItems: 'center', width: '100%', marginHorizontal: '5%', paddingVertical: 15}}
+          onPress={ ()=> {
+            navigation.goBack();
+          }}
+        >
           <ImageBackground source={require('../../assets/images/VectorLeft.png')} style={{ width: 10, height: 20 }} />
           <Text style={{ fontSize: 18, color: '#3D7944', fontWeight: '700', marginLeft: 15 }}>TIGER</Text>
-        </View>
+        </TouchableOpacity>
         <Slide data={memberDetailData[name]["slide"]} />
         <View style={{ width: "90%", marginHorizontal: "5%", marginTop: 30 }}>
           <Text style={{ marginBottom: 20, fontSize: 16, fontWeight: "600" }}>Physical characteristic</Text>
