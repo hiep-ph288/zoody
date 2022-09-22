@@ -5,14 +5,10 @@ import Main from "./Main";
 import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
 import Home from "./src/screens/Home";
 import { Ionicons } from "@expo/vector-icons";
-import QuizzHome from "./src/screens/Quizz/QuizzHome";
-import Quizz from "./src/screens/Quizz/Quizz"
 import IconBottomTab from "./src/components/IconBottomTab";
-import Practice from "./src/screens/Practices/Practice";
 import HomeStack from "./src/navigations/HomeStack";
 import QuizzStack from "./src/navigations/QuizzStack";
-import PracticeHome from "./src/screens/Practices/PracticeHome";
-import PracticeResult from "./src/screens/Practices/PracticeResult";
+import PracticeStack from "./src/navigations/PracticeStack";
 
 // Define the config
 const config = {
@@ -64,7 +60,7 @@ export default function App() {
         <Tab.Navigator initialRouteName="Home">
           <Tab.Screen name="Home" component={HomeStack} options={options} />
           <Tab.Screen name="Quizz" component={QuizzStack} options={options} />
-          <Tab.Screen name="Practice" component={Practice} options={options} />
+          <Tab.Screen name="Practice" component={PracticeStack} options={options} />
           <Tab.Screen name="Profile" component={Main} options={options} />
         </Tab.Navigator>
       </NavigationContainer>
