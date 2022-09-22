@@ -1,25 +1,79 @@
 import {
   StyleSheet,
   Text,
-  View,
-  TouchableOpacity,
   Dimensions,
+  Platform,
   StatusBar,
 } from "react-native";
-import { Image, Stack } from "native-base";
-import React from "react";
+import { Button, Image, ScrollView, Stack, View } from "native-base";
+import React, { useState } from "react";
+import CharacterBox, { EStatus } from "../../components/CharacterBox";
 import { useNavigation } from "@react-navigation/native";
+import { practiceData } from "../../db/practice";
+import { useRoute } from "@react-navigation/native";
 
-export default function Practice() {
+const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
+
+const bgHeight = Math.round(((5 / 4) * imgWidth) / 6);
+
+const show: { [key: string]: string } = {
+  easy: "Dễ",
+  medium: "Trung bình",
+  hard: "Khó",
+};
+
+const Practice = () => {
+  const [status, setStatus] = useState<EStatus[]>([
+    EStatus.NORMAL,
+    EStatus.NORMAL,
+    EStatus.NORMAL,
+  ]);
+
+  const route = useRoute<any>();
+  const navigation = useNavigation<any>();
+  const [currQues, setCurrQues] = useState(0);
+  const level: string = route.params.level ? route.params.level : "easy";
+
+  const onPress = (i: number) => () => {
+    const newStatus = [...status];
+    for (let index = 0; index < newStatus.length; index++) {
+      newStatus[index] = EStatus.NORMAL;
+    }
+    newStatus[i] = EStatus.CORRECT;
+    setStatus(newStatus);
+  };
+
   return (
-    <Stack style={{height: '100%'}}>
-      <View>
-        <Text>PRACTICE WITH ZOODY</Text>
-        <Text>Mức độ: Dễ</Text>
+    <Stack style={styles.container}>
+      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
+      <View style={styles.header}>
+        <Text style={styles.text_main}>PRACTICE WITH ZOODY</Text>
+        <Text style={styles.text_level}>Mức độ: {show[level]}</Text>
+      </View>
+      <View style={styles.main}>
+        <Text style={styles.text__ques}>Câu 1</Text>
+        <Text style={styles.text__ques}>
+          Tên của một động vật có vú sống dưới nước:
+        </Text>
       </View>
       <View>
-        <Text>Câu 1</Text>
-        <Text>Tên của một động vật có vú sống dưới nước:</Text>
+        {practiceData[currQues]["choose"].map((item, i) => (
+          <CharacterBox
+            key={item}
+            status={status[i]}
+            onPress={onPress(i)}
+            content={item}
+            style={styles.btn}
+          />
+        ))}
+      </View>
+      <View style={{ width: "100%", alignItems: "center" }}>
+        <Button
+          style={styles.btn}
+          onPress={() => navigation.navigate("PracticeHomeScreen")}
+        >
+          <Text style={{ color: "#3D7944" }}>TRẢ LỜI</Text>
+        </Button>
       </View>
       <Image
         source={require("../../../assets/images/practice-bg.png")}
@@ -29,10 +83,52 @@ export default function Practice() {
         position="absolute"
         resizeMode="stretch"
         bottom="0"
-        alignSelf='center'
+        style={{ zIndex: -1 }}
       />
     </Stack>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({})
+export default Practice;
+
+const styles = StyleSheet.create({
+  container: {
+    height: "100%",
+    alignItems: "center",
+  },
+  header: {
+    width: "100%",
+    height: "30%",
+    backgroundColor: "#FFF9EC",
+    alignItems: "center",
+    borderBottomStartRadius: 30,
+    borderBottomEndRadius: 30,
+  },
+  text_main: {
+    color: "#A1783F",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginTop: 80,
+  },
+  text_level: {
+    color: "#3D7944",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  main: {
+    marginTop: 40,
+    alignItems: "center",
+  },
+  text__ques: {
+    color: "#757575",
+    fontSize: 16,
+    fontWeight: "700",
+  },
+  btn: {
+    width: "80%",
+    height: 40,
+    borderRadius: 5,
+    backgroundColor: "#FCD02E",
+  },
+});

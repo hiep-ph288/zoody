@@ -10,25 +10,35 @@ import { Image, Stack } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-export default function PracticeHome() {
+interface LevelInfo {
+  text: string;
+  level: string;
+}
+
+const levels: LevelInfo[] = [
+  { text: "Dễ", level: "easy" },
+  { text: "Trung bình", level: "medium" },
+  { text: "Khó", level: "hard" },
+];
+
+const PracticeHome = () => {
   const navigation = useNavigation<any>();
   return (
     <Stack style={{ height: "100%", backgroundColor: '#F5F5F5' }}>
       <StatusBar barStyle="dark-content" />
       <View style={styles.container}>
         <Text style={styles.textmain}>PRACTICE WITH ZOODY</Text>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => navigation.navigate("QuizzScreen")}
-        >
-          <Text style={styles.text}>Dễ</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
-          <Text style={styles.text}>Trung bình</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
-          <Text style={styles.text}>Khó</Text>
-        </TouchableOpacity>
+        {levels.map((info) => (
+          <TouchableOpacity
+            style={styles.box}
+            key={info.level}
+            onPress={() =>
+              navigation.navigate("PracticeScreen", { level: info.level })
+            }
+          >
+            <Text style={styles.text}>{info.text}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
       <Image
         source={require("../../../assets/images/crocodile-bg.png")}
@@ -43,6 +53,7 @@ export default function PracticeHome() {
     </Stack>
   );
 }
+export default PracticeHome;
 
 const styles = StyleSheet.create({
   container: {

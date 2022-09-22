@@ -6,7 +6,6 @@ import { useNavigation } from "@react-navigation/native";
 import { quizzData } from "../../db/quizz";
 import { useRoute } from "@react-navigation/native";
 
-// const questions = ["Côn trùng", "Động vật có vú", "Động vật đẻ trứng"];
 const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
 
 const bgHeight = Math.round(((5 / 4) * imgWidth) / 6);
@@ -42,8 +41,7 @@ const Quizz = () => {
     if (currQues < quizzData[level].length - 1) setCurrQues(currQues + 1);
     else navigation.navigate("ResultScreen");
   };
-  console.log(quizzData[level][currQues]);
-  
+
   return (
     <Stack style={{ height: "100%" }}>
       <View height={Platform.OS == "android" ? 0 : 44} bg="#3D7944" />

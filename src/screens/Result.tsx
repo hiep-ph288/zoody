@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image, Stack } from "native-base";
+import { quizzData } from "../db/quizz";
 
 const Result = () => {
   return (

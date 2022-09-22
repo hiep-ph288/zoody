@@ -1,14 +1,14 @@
 import { ImageSourcePropType } from "react-native";
 
 
-export interface QuizzData {
+export interface PracticeData {
   image: ImageSourcePropType;
   ques: string;
   choose: string[];
   ans: number;
 }
 
-export const quizzData: { [key: string]: QuizzData[] } = {
+export const practiceData: { [key: string]: PracticeData[] } = {
   easy: [
     {
       image: require('../../assets/images/dolphin.png'),
