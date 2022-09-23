@@ -30,11 +30,11 @@ const Result = () => {
             <Text>question</Text>
           </View>
           <View style={[styles.ques, styles.ques__true]}>
-            <Text style={[styles.ques__num, styles.text__white]}>8</Text>
+            <Text style={[styles.ques__num, styles.text__white]}>{route.params.point}</Text>
             <Text style={styles.text__white}>true</Text>
           </View>
           <View style={[styles.ques, styles.ques__false]}>
-            <Text style={[styles.ques__num, styles.text__white]}>2</Text>
+            <Text style={[styles.ques__num, styles.text__white]}>{quizzData[level].length - route.params.point}</Text>
             <Text style={styles.text__white}>false</Text>
           </View>
         </View>

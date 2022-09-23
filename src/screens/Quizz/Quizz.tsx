@@ -33,6 +33,8 @@ const Quizz = () => {
     EStatus.NORMAL,
     EStatus.NORMAL,
   ]);
+  const [next, setNext] = useState(false);
+  const [point, setPoint] = useState(0);
 
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
@@ -40,17 +42,35 @@ const Quizz = () => {
   const level: string = route.params.level ? route.params.level : "easy";
 
   const onPress = (i: number) => () => {
+    const ans = quizzData[level][currQues].ans;
     const newStatus = [...status];
     for (let index = 0; index < newStatus.length; index++) {
-      newStatus[index] = EStatus.NORMAL;
+      newStatus[index] = EStatus.DISABLE;
     }
-    newStatus[i] = EStatus.CORRECT;
+    if (i == ans) {
+      newStatus[i] = EStatus.CORRECT;
+      setPoint(point + 1);
+    } else {
+      newStatus[ans] = EStatus.CORRECT;
+      newStatus[i] = EStatus.IN_CORRECT;
+    }
+    setNext(true);
     setStatus(newStatus);
   };
 
   const onNext = () => {
-    if (currQues < quizzData[level].length - 1) setCurrQues(currQues + 1);
-    else navigation.navigate("ResultScreen",  { level: level });
+    if (currQues < quizzData[level].length - 1) {
+      setCurrQues(currQues + 1);
+      setNext(false);
+
+      const newStatus = [...status];
+      for (let index = 0; index < newStatus.length; index++) {
+        newStatus[index] = EStatus.NORMAL;
+      }
+      setStatus(newStatus);
+    } else {
+      navigation.navigate("ResultScreen", { level: level, point });
+    }
   };
 
   return (
@@ -96,9 +116,11 @@ const Quizz = () => {
             Dừng lại
           </Text>
         </Button>
-        <Button style={styles.btn__continue} onPress={onNext}>
-          {currQues === quizzData[level].length - 1 ? "Kết thúc" : "Tiếp tục"}
-        </Button>
+        {next && (
+          <Button style={styles.btn__continue} onPress={onNext}>
+            {currQues === quizzData[level].length - 1 ? "Kết thúc" : "Tiếp tục"}
+          </Button>
+        )}
       </View>
       <Image
         source={require("../../../assets/images/quiz-bg.png")}

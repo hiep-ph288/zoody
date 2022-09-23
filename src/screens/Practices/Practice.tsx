@@ -11,6 +11,7 @@ import CharacterBox, { EStatus } from "../../components/CharacterBox";
 import { useNavigation } from "@react-navigation/native";
 import { practiceData } from "../../db/practice";
 import { useRoute } from "@react-navigation/native";
+import { QuizInput } from "react-native-quiz-input";
 
 const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
 
@@ -44,6 +45,23 @@ const Practice = () => {
   const navigation = useNavigation<any>();
   const [currQues, setCurrQues] = useState(0);
   const level: string = route.params.level ? route.params.level : "easy";
+  const [correct, setCorrect] = useState<boolean | null>(null);
+
+  const [typedWord, setTypedWord] = useState("");
+
+  const onChange = (data: any) => {
+    const ans = practiceData[level][currQues].ans;
+    console.log(data);
+    
+    if (data.wordString.length == ans.length) {
+      const ansText = ans.join("");
+      setCorrect(ansText === data.wordString);
+    }
+    else {
+      // setTypedWord(data.wordString);
+      setCorrect(null);
+    }
+  };
 
   const onPress = (i: number) => () => {
     const newStatus = [...status];
@@ -67,21 +85,18 @@ const Practice = () => {
         </Text>
       </View>
       <View style={styles.box__choose}>
-        {practiceData[level][currQues]["choose"].map((item, i) => (
-          <CharacterBox
-            key={item}
-            status={status[i]}
-            onPress={onPress(i)}
-            content={item}
-            style={styles.choose}
-          />
-        ))}
+        <QuizInput
+          wordStructure={practiceData[level][currQues].ans.map((c) => true)}
+          onChange={onChange}
+        />
       </View>
       <View style={{ width: "100%", alignItems: "center" }}>
         <Button
           style={styles.btn}
           key={level}
-          onPress={() => navigation.navigate("PracticeResultScreen",  { level: level })}
+          onPress={() =>
+            navigation.navigate("PracticeResultScreen", { level: level })
+          }
         >
           <Text style={{ color: "#3D7944" }}>TRẢ LỜI</Text>
         </Button>
@@ -96,6 +111,7 @@ const Practice = () => {
         bottom="0"
         style={{ zIndex: -1 }}
       />
+      {correct != null &&<Text>{correct? "CORRECT":"IN_CORRECT"}</Text>}
     </Stack>
   );
 };
@@ -143,12 +159,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#FCD02E",
   },
   box__choose: {
-    flexDirection: 'row',
-    marginVertical: 20
+    flexDirection: "row",
+    marginVertical: 20,
   },
   choose: {
     width: 50,
     height: 50,
-    alignItems: 'center',
-  }
+    alignItems: "center",
+  },
 });
