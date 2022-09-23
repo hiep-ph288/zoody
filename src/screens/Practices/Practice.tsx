@@ -16,6 +16,17 @@ const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
 
 const bgHeight = Math.round(((5 / 4) * imgWidth) / 6);
 
+interface LevelInfo {
+  text: string;
+  level: string;
+}
+
+const levels: LevelInfo[] = [
+  { text: "Dễ", level: "easy" },
+  { text: "Trung bình", level: "medium" },
+  { text: "Khó", level: "hard" },
+];
+
 const show: { [key: string]: string } = {
   easy: "Dễ",
   medium: "Trung bình",
@@ -69,7 +80,8 @@ const Practice = () => {
       <View style={{ width: "100%", alignItems: "center" }}>
         <Button
           style={styles.btn}
-          onPress={() => navigation.navigate("PracticeResultScreen")}
+          key={level}
+          onPress={() => navigation.navigate("PracticeResultScreen",  { level: level })}
         >
           <Text style={{ color: "#3D7944" }}>TRẢ LỜI</Text>
         </Button>

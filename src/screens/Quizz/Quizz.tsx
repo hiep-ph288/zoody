@@ -10,6 +10,17 @@ const imgWidth = Math.round(0.8 * Dimensions.get("screen").width);
 
 const bgHeight = Math.round(((5 / 4) * imgWidth) / 6);
 
+interface LevelInfo {
+  text: string;
+  level: string;
+}
+
+const levels: LevelInfo[] = [
+  { text: "Dễ", level: "easy" },
+  { text: "Trung bình", level: "medium" },
+  { text: "Khó", level: "hard" },
+];
+
 const show: { [key: string]: string } = {
   easy: "Dễ",
   medium: "Trung bình",
@@ -39,7 +50,7 @@ const Quizz = () => {
 
   const onNext = () => {
     if (currQues < quizzData[level].length - 1) setCurrQues(currQues + 1);
-    else navigation.navigate("ResultScreen");
+    else navigation.navigate("ResultScreen",  { level: level });
   };
 
   return (

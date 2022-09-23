@@ -2,12 +2,25 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image, Stack } from "native-base";
 import { quizzData } from "../db/quizz";
+import { useRoute } from "@react-navigation/native";
+
+
+const show: { [key: string]: string } = {
+  easy: "Dễ",
+  medium: "Trung bình",
+  hard: "Khó",
+};
+
+
 
 const Result = () => {
+  const route = useRoute<any>();
+  const level: string = route.params.level ? route.params.level : "easy";
+  
   return (
     <View style={styles.bg}>
       <Text style={styles.text__main}>ZOODY'S QUIZ</Text>
-      <Text style={styles.text__level}>Mức độ: Dễ</Text>
+      <Text style={styles.text__level}>Mức độ: {show[level]}</Text>
       <View style={styles.container}>
         <Text style={styles.text__comment}>GREAT JOB</Text>
         <Text style={styles.text__score}>Your score</Text>
