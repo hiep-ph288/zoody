@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image, Stack } from "native-base";
 import { useRoute } from "@react-navigation/native";
+import { practiceData } from "../../db/practice";
 
 const show: { [key: string]: string } = {
   easy: "Dễ",
@@ -22,7 +23,7 @@ const PracticeResult = () => {
         <Text style={styles.text__score}>Your score</Text>
         <View style={styles.box__score}>
           <View style={[styles.ques, styles.ques__total]}>
-            <Text style={styles.ques__num}>10</Text>
+            <Text style={styles.ques__num}>{practiceData[level].length}</Text>
             <Text>question</Text>
           </View>
           <View style={[styles.ques, styles.ques__true]}>

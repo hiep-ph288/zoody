@@ -24,6 +24,11 @@ export const practiceData: { [key: string]: PracticeData[] } = {
       choose:['D','O','L','P','H','E','N'],
       ans: 1
     },
+    {
+      ques:"Câu 4: Tên của một động vật có vú sống dưới nước: ",
+      choose:['D','O','L','P','H','E','N'],
+      ans: 1
+    },
   ],
   medium: [
     {

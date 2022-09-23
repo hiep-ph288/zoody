@@ -26,7 +26,7 @@ const Result = () => {
         <Text style={styles.text__score}>Your score</Text>
         <View style={styles.box__score}>
           <View style={[styles.ques, styles.ques__total]}>
-            <Text style={styles.ques__num}>10</Text>
+            <Text style={styles.ques__num}>{quizzData[level].length}</Text>
             <Text>question</Text>
           </View>
           <View style={[styles.ques, styles.ques__true]}>

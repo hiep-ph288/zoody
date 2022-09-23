@@ -28,6 +28,12 @@ export const quizzData: { [key: string]: QuizzData[] } = {
       choose:['Côn trùng','Động vật có vú','Động vật đẻ trứng'],
       ans: 1
     },
+    {
+      image: require('../../assets/images/red-panda.png'),
+      ques:"Câu 4: HEHE?",
+      choose:['Côn trùng','Động vật có vú','Động vật đẻ trứng'],
+      ans: 1
+    },
   ],
   medium: [
     {
