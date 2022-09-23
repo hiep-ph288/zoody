@@ -45,7 +45,7 @@ const CharacterBox = (props: CharacterBoxProps) => {
   return (
     <TouchableOpacity style={[styles.button, style]} {...rest}>
       <View style={[styles.box, extraBox]}>
-        <Text style={[styles.text, extraText]}>D</Text>
+        <Text style={[styles.text, extraText]}>{content}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -58,17 +58,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   box: {
-    width: "70%",
+    width: "80%",
     height: 41,
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
     borderColor: "#3D7944",
     borderWidth: 1,
     justifyContent: "center",
+    alignItems: 'center'
   },
   text: {
     color: "#000",
-    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   correctBox: {
     backgroundColor: "#3D7944",

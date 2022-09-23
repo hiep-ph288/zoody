@@ -51,26 +51,25 @@ const Practice = () => {
         <Text style={styles.text_level}>Mức độ: {show[level]}</Text>
       </View>
       <View style={styles.main}>
-        <Text style={styles.text__ques}>Câu 1</Text>
         <Text style={styles.text__ques}>
-          Tên của một động vật có vú sống dưới nước:
+          {practiceData[level][currQues].ques}
         </Text>
       </View>
-      <View>
-        {practiceData[currQues]["choose"].map((item, i) => (
+      <View style={styles.box__choose}>
+        {practiceData[level][currQues]["choose"].map((item, i) => (
           <CharacterBox
             key={item}
             status={status[i]}
             onPress={onPress(i)}
             content={item}
-            style={styles.btn}
+            style={styles.choose}
           />
         ))}
       </View>
       <View style={{ width: "100%", alignItems: "center" }}>
         <Button
           style={styles.btn}
-          onPress={() => navigation.navigate("PracticeHomeScreen")}
+          onPress={() => navigation.navigate("PracticeResultScreen")}
         >
           <Text style={{ color: "#3D7944" }}>TRẢ LỜI</Text>
         </Button>
@@ -131,4 +130,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#FCD02E",
   },
+  box__choose: {
+    flexDirection: 'row',
+    marginVertical: 20
+  },
+  choose: {
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+  }
 });
