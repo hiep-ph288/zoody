@@ -51,8 +51,6 @@ const Practice = () => {
 
   const onChange = (data: any) => {
     const ans = practiceData[level][currQues].ans;
-    console.log(data);
-    
     if (data.wordString.length == ans.length) {
       const ansText = ans.join("");
       setCorrect(ansText === data.wordString);
@@ -86,6 +84,8 @@ const Practice = () => {
       </View>
       <View style={styles.box__choose}>
         <QuizInput
+          size='large'
+          borderColor='#3D7944'
           wordStructure={practiceData[level][currQues].ans.map((c) => true)}
           onChange={onChange}
         />
