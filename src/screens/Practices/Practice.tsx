@@ -23,15 +23,15 @@ interface LevelInfo {
 }
 
 const levels: LevelInfo[] = [
-  { text: "Dễ", level: "easy" },
-  { text: "Trung bình", level: "medium" },
-  { text: "Khó", level: "hard" },
+  { text: "Easy", level: "easy" },
+  { text: "Medium", level: "medium" },
+  { text: "Hard", level: "hard" },
 ];
 
 const show: { [key: string]: string } = {
-  easy: "Dễ",
-  medium: "Trung bình",
-  hard: "Khó",
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
 };
 
 const Practice = () => {
@@ -75,7 +75,7 @@ const Practice = () => {
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
       <View style={styles.header}>
         <Text style={styles.text_main}>PRACTICE WITH ZOODY</Text>
-        <Text style={styles.text_level}>Mức độ: {show[level]}</Text>
+        <Text style={styles.text_level}>Level: {show[level]}</Text>
       </View>
       <View style={styles.main}>
         <Text style={styles.text__ques}>
@@ -98,7 +98,7 @@ const Practice = () => {
             navigation.navigate("PracticeResultScreen", { level: level })
           }
         >
-          <Text style={{ color: "#3D7944" }}>TRẢ LỜI</Text>
+          <Text style={{ color: "#3D7944" }}>Continue</Text>
         </Button>
       </View>
       <Image

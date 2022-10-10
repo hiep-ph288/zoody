@@ -16,9 +16,9 @@ interface LevelInfo {
 }
 
 const levels: LevelInfo[] = [
-  { text: "Dễ", level: "easy" },
-  { text: "Trung bình", level: "medium" },
-  { text: "Khó", level: "hard" },
+  { text: "Easy", level: "easy" },
+  { text: "Medium", level: "medium" },
+  { text: "Hard", level: "hard" },
 ];
 
 const PracticeHome = () => {

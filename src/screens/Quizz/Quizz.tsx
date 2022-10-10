@@ -16,15 +16,15 @@ interface LevelInfo {
 }
 
 const levels: LevelInfo[] = [
-  { text: "Dễ", level: "easy" },
-  { text: "Trung bình", level: "medium" },
-  { text: "Khó", level: "hard" },
+  { text: "Easy", level: "easy" },
+  { text: "Medium", level: "medium" },
+  { text: "Hard", level: "hard" },
 ];
 
 const show: { [key: string]: string } = {
-  easy: "Dễ",
-  medium: "Trung bình",
-  hard: "Khó",
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
 };
 
 const Quizz = () => {
@@ -78,7 +78,7 @@ const Quizz = () => {
       <View height={Platform.OS == "android" ? 0 : 44} bg="#3D7944" />
       <View style={styles.container}>
         <Text style={styles.text_main}>ZOODY'S QUIZ</Text>
-        <Text style={styles.text_level}>Mức độ: {show[level]}</Text>
+        <Text style={styles.text_level}>Level: {show[level]}</Text>
         <Image
           style={{
             width: imgWidth,
@@ -113,12 +113,12 @@ const Quizz = () => {
               color: "#3D7944",
             }}
           >
-            Dừng lại
+            Stop
           </Text>
         </Button>
         {next && (
           <Button style={styles.btn__continue} onPress={onNext}>
-            {currQues === quizzData[level].length - 1 ? "Kết thúc" : "Tiếp tục"}
+            {currQues === quizzData[level].length - 1 ? "Stop" : "Continue"}
           </Button>
         )}
       </View>

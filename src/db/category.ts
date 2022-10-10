@@ -5,50 +5,50 @@ import { MemberItemProps } from "../components/MemberItem";
 export const categoriesData: CategoryInfoProps[] = [
   {
     image: require("../../assets/images/elephants-home.png"),
-    quantity: "60 loai",
+    quantity: "5488 species",
     title: "Mammals",
     summary:
-      "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
+      "Mammals include humans and all other animals that are warm-blooded vertebrates (vertebrates have backbones) with hair. They feed their young with milk and have a more well-developed brain than other types of animals.",
   },
 
   {
     image: require("../../assets/images/salamander-home.png"),
-    quantity: "60 loai",
+    quantity: "8225 species",
     title: "Reptile",
     summary:
-      "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
+      "Reptiles are cold-blooded vertebrates. (Vertebrates have backbones.) They have dry skin covered with scales or bony plates and usually lay soft-shelled eggs.",
   },
 
   {
     image: require("../../assets/images/bird-home.png"),
-    quantity: "60 loai",
+    quantity: "6 - 10 million species",
     title: "Insect",
     summary:
-      "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
+      "Any member of the largest class of the phylum Arthropoda, which is itself the largest of the animal phyla. Insects have segmented bodies, jointed legs, and external skeletons.",
   },
 
   {
     image: require("../../assets/images/victoria-crowned.jpg"),
-    quantity: "60 loai",
-    title: "Feathered Species",
+    quantity: "2 species",
+    title: "Feathered",
     summary:
-      "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
+      "Feathered Species are warm-blooded vertebrates (vertebrates have backbones) and are the only animals with feathers. Although all birds have wings, a few species can't fly.",
   },
 
   {
     image: require("../../assets/images/salamander-home.png"),
-    quantity: "60 loai",
+    quantity: "44000 species",
     title: "Crustacean",
     summary:
-      "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
+      "Crustaceans make up a very large group of the Arthropods which include the crabs, lobsters, crayfish, shrimp, krill,... Crustaceans are found in a wide range of habitats - most are free-living freshwater or marine animals, but some are terrestrial, some are parasitic and some do not move.",
   },
 
   {
     image: require("../../assets/images/bird-home.png"),
-    quantity: "60 loai",
-    title: "Amphibia",
+    quantity: "7000 species",
+    title: "Amphibians",
     summary:
-      "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
+      "Amphibians are cold-blooded vertebrates (vertebrates have backbones) that don’t have scales. They live part of their lives in water and part on land.",
   },
 ];
 

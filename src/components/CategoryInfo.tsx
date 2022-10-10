@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   insectImage: {
     width: "100%",
-    height: 160,
+    height: 180,
     position: "relative",
     right: -20,
     borderRadius: 15,

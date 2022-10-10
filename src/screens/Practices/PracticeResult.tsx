@@ -5,9 +5,9 @@ import { useRoute } from "@react-navigation/native";
 import { practiceData } from "../../db/practice";
 
 const show: { [key: string]: string } = {
-  easy: "Dễ",
-  medium: "Trung bình",
-  hard: "Khó",
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
 };
 
 const PracticeResult = () => {
@@ -17,7 +17,7 @@ const PracticeResult = () => {
   return (
     <View style={styles.bg}>
       <Text style={styles.text__main}>PRACTICE WITH ZOODY</Text>
-      <Text style={styles.text__level}>Mức độ: {show[level]}</Text>
+      <Text style={styles.text__level}>Level: {show[level]}</Text>
       <View style={styles.container}>
         <Text style={styles.text__comment}>GREAT JOB</Text>
         <Text style={styles.text__score}>Your score</Text>
