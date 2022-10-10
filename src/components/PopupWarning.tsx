@@ -5,7 +5,7 @@ import {
   Platform,
   StatusBar,
 } from "react-native";
-import { Button, Image, ScrollView, Stack, View } from "native-base";
+import { Button, Icon, Image, Input, ScrollView, Stack, View, Pressable } from "native-base";
 import React from "react";
 
 const PopupWarning = () => {
@@ -41,10 +41,10 @@ export default PopupWarning;
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: '100%',
-    height: '50%',
-    alignItems: 'center',
-    marginTop: 40
+    width: "100%",
+    height: "50%",
+    alignItems: "center",
+    marginTop: 40,
   },
   container: {
     position: "relative",
@@ -56,9 +56,9 @@ const styles = StyleSheet.create({
   },
   bg: {
     position: "absolute",
-    width: '100%',
+    width: "100%",
     alignItems: "center",
-    top: -40
+    top: -40,
   },
   text__popup: {
     fontSize: 20,

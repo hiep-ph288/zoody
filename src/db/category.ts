@@ -28,9 +28,9 @@ export const categoriesData: CategoryInfoProps[] = [
   },
 
   {
-    image: require("../../assets/images/beetles-home.png"),
+    image: require("../../assets/images/victoria-crowned.jpg"),
     quantity: "60 loai",
-    title: "Insect",
+    title: "Feathered Species",
     summary:
       "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
   },
@@ -38,7 +38,7 @@ export const categoriesData: CategoryInfoProps[] = [
   {
     image: require("../../assets/images/salamander-home.png"),
     quantity: "60 loai",
-    title: "Reptile",
+    title: "Crustacean",
     summary:
       "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
   },
@@ -46,7 +46,7 @@ export const categoriesData: CategoryInfoProps[] = [
   {
     image: require("../../assets/images/bird-home.png"),
     quantity: "60 loai",
-    title: "Insect",
+    title: "Amphibia",
     summary:
       "A type of very small animal with six legs, a body divided into three parts and usually two pairs of wings, or, more generally, any similar very small animal",
   },

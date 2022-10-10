@@ -10,6 +10,7 @@ import HomeStack from "./src/navigations/HomeStack";
 import QuizzStack from "./src/navigations/QuizzStack";
 import PracticeStack from "./src/navigations/PracticeStack";
 import PopupWarning from "./src/components/PopupWarning";
+import Signin from "./src/screens/Signin";
 
 // Define the config
 const config = {
@@ -62,7 +63,7 @@ export default function App() {
           <Tab.Screen name="Home" component={HomeStack} options={options} />
           <Tab.Screen name="Quizz" component={QuizzStack} options={options} />
           <Tab.Screen name="Practice" component={PracticeStack} options={options} />
-          <Tab.Screen name="Profile" component={PopupWarning} options={options} />
+          <Tab.Screen name="Profile" component={Signin} options={options} />
         </Tab.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
