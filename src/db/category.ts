@@ -4,7 +4,7 @@ import { MemberItemProps } from "../components/MemberItem";
 // Use in Home
 export const categoriesData: CategoryInfoProps[] = [
   {
-    image: require("../../assets/images/elephants-home.png"),
+    image: require("../../assets/images/category/elephants-home.png"),
     quantity: "5488 species",
     title: "Mammals",
     summary:
@@ -12,7 +12,7 @@ export const categoriesData: CategoryInfoProps[] = [
   },
 
   {
-    image: require("../../assets/images/salamander-home.png"),
+    image: require("../../assets/images/category/salamander-home.png"),
     quantity: "8225 species",
     title: "Reptile",
     summary:
@@ -20,7 +20,7 @@ export const categoriesData: CategoryInfoProps[] = [
   },
 
   {
-    image: require("../../assets/images/bird-home.png"),
+    image: require("../../assets/images/category/bird-home.png"),
     quantity: "6 - 10 million species",
     title: "Insect",
     summary:
@@ -28,7 +28,7 @@ export const categoriesData: CategoryInfoProps[] = [
   },
 
   {
-    image: require("../../assets/images/victoria-crowned.jpg"),
+    image: require("../../assets/images/category/elephants-home.png"),
     quantity: "2 species",
     title: "Feathered",
     summary:
@@ -36,7 +36,7 @@ export const categoriesData: CategoryInfoProps[] = [
   },
 
   {
-    image: require("../../assets/images/salamander-home.png"),
+    image: require("../../assets/images/category/salamander-home.png"),
     quantity: "44000 species",
     title: "Crustacean",
     summary:
@@ -44,7 +44,7 @@ export const categoriesData: CategoryInfoProps[] = [
   },
 
   {
-    image: require("../../assets/images/bird-home.png"),
+    image: require("../../assets/images/category/bird-home.png"),
     quantity: "7000 species",
     title: "Amphibians",
     summary:

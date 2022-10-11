@@ -18,11 +18,7 @@ export interface MemberDetailData {
 export const memberDetailData: MemberDetailData = {
   zebra: {
     slide: [
-      { image: require("../../assets/images/red-panda.png") },
-      { image: require("../../assets/images/red-panda.png") },
-      { image: require("../../assets/images/red-panda.png") },
-      { image: require("../../assets/images/red-panda.png") },
-      { image: require("../../assets/images/red-panda.png") },
+      { image: require("../../assets/images/slide/red-panda.png") },
     ],
     weight: "90 - 310 kg",
     length: "2,5 – 3,9 m",

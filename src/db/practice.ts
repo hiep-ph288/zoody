@@ -9,56 +9,68 @@ export interface PracticeData {
 export const practiceData: { [key: string]: PracticeData[] } = {
   easy: [
     {
-      ques:"Câu 1: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question 1: Which group of animals Tortoises are: ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 2: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 3: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 4: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
+    },
+    {
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
   ],
   medium: [
     {
-      ques:"Câu 1: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question 1: : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 2: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 3: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 4: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
+    },
+    {
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
   ],
   hard: [
     {
-      ques:"Câu 1: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 2: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 3: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
     {
-      ques:"Câu 4: Tên của một động vật có vú sống dưới nước: ",
-      ans:['D','O','L','P','H','I','N'],
+      ques:"Question : : ",
+      ans:['','','','','','',''],
+    },
+    {
+      ques:"Question : : ",
+      ans:['','','','','','',''],
     },
   ],
 };
