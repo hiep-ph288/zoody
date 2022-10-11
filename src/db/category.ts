@@ -53,22 +53,79 @@ export const categoriesData: CategoryInfoProps[] = [
 ];
 
 export const mammalItems: MemberItemProps[] = [
-  { image: require("../../assets/images/tiger-item.png"), name: 'Tiger' },
-  { image: require("../../assets/images/lion-item.png"), name: 'Lion' },
-  { image: require("../../assets/images/zebra-item.png"), name: 'Zebra' },
-  { image: require("../../assets/images/elephants-item.png"), name: 'Elephant' },
-  { image: require("../../assets/images/goat-item.png"), name: 'Goat' },
-  { image: require("../../assets/images/fox-item.png"), name: 'Fox' },
-  { image: require("../../assets/images/wolf-item.png"), name: 'Wolf' },
-  { image: require("../../assets/images/camel-item.png"), name: 'Camel' },
-  { image: require("../../assets/images/monkey-item.png"), name: 'Monkey' },
-  { image: require("../../assets/images/tiger-item.png"), name: 'Tiger' },
-  { image: require("../../assets/images/lion-item.png"), name: 'Lion' },
-  { image: require("../../assets/images/zebra-item.png"), name: 'Zebra' },
-  { image: require("../../assets/images/elephants-item.png"), name: 'Elephant' },
-  { image: require("../../assets/images/goat-item.png"), name: 'Goat' },
-  { image: require("../../assets/images/fox-item.png"), name: 'Fox' },
-  { image: require("../../assets/images/wolf-item.png"), name: 'Wolf' },
-  { image: require("../../assets/images/camel-item.png"), name: 'Camel' },
-  { image: require("../../assets/images/monkey-item.png"), name: 'Monkey' },
+  { image: require("../../assets/images/mammals/wolf/wolf-item.png"), name: 'Wolf' },
+  { image: require("../../assets/images/mammals/tiger/tiger-item.png"), name: 'Tiger' },
+  { image: require("../../assets/images/mammals/otter/Portrait.jpg"), name: 'Otter' },
+  { image: require("../../assets/images/mammals/orca/Portrait.jpg"), name: 'Orca' },
+  { image: require("../../assets/images/mammals/jaguar/Portrait.jpg"), name: 'Jaguar' },
+  { image: require("../../assets/images/mammals/elephant/Portrait.jpg"), name: 'Elephants' },
+  { image: require("../../assets/images/mammals/deer/Portrait.jpg"), name: 'Deer' },
+  { image: require("../../assets/images/mammals/cheetah/Cheetah.jpg"), name: 'Cheetah' },
+  { image: require("../../assets/images/mammals/blue-whale/Portrait.jpg"), name: 'Blue Whale' },
+  { image: require("../../assets/images/mammals/bear/Portrait.jpg"), name: 'Bear' },
+];
+
+export const reptileItems: MemberItemProps[] = [
+  { image: require("../../assets/images/reptile/turtle/Turtle.jpeg"), name: 'Turtle' },
+  { image: require("../../assets/images/reptile/tortoise/Portrait.jpg"), name: 'Tortoise' },
+  { image: require("../../assets/images/reptile/sulcata-tortoise/Portrait.jpg"), name: 'Sulcata Tortoise' },
+  { image: require("../../assets/images/reptile/snake/Portrait.jpg"), name: 'Snake' },
+  { image: require("../../assets/images/reptile/lizard/Portrait.jpg"), name: 'Lizard' },
+  { image: require("../../assets/images/reptile/leopard-gecko/Portrait.jpg"), name: 'Leopard Gecko' },
+  { image: require("../../assets/images/reptile/iguana/Portrait.jpg"), name: 'Iguana' },
+  { image: require("../../assets/images/reptile/crocodile/Crocodile.jpg"), name: 'Crocodile' },
+  { image: require("../../assets/images/reptile/chameleon/Portrait.jpg"), name: 'Chameleon' },
+  { image: require("../../assets/images/reptile/caiman/Portrait.jpg"), name: 'Caiman' },
+];
+
+export const insectItems: MemberItemProps[] = [
+  { image: require("../../assets/images/insects/mosquitoes/Mosquitoes.jpg"), name: 'Mosquitoes' },
+  { image: require("../../assets/images/insects/ladybug/Ladybug.jpg"), name: 'Ladybug' },
+  { image: require("../../assets/images/insects/havester-ants/harvester-ants.jpg"), name: 'Harvester Ants' },
+  { image: require("../../assets/images/insects/fly/Fly.jpg"), name: 'Fly' },
+  { image: require("../../assets/images/insects/flea/flea.jpg"), name: 'Flea' },
+  { image: require("../../assets/images/insects/dragonfly/Dragonfly.jpeg"), name: 'Dragonfly' },
+  { image: require("../../assets/images/insects/cricket/Cricket.jpg"), name: 'Cricket' },
+  { image: require("../../assets/images/insects/cicada/Cicada.jpg"), name: 'Cicadas' },
+  { image: require("../../assets/images/insects/bumble-bee/Bumble-Bee.jpg"), name: 'Bumble Bees' },
+  { image: require("../../assets/images/insects/beetle/Beetle.jpg"), name: 'Beetle' },
+];
+
+export const featheredItems: MemberItemProps[] = [
+  { image: require("../../assets/images/feathered/victoria-crowned-pigeons/Victoria-Crowned-Pigeons.jpg"), name: 'Victoria Crowned Pigeons' },
+  { image: require("../../assets/images/feathered/toucans/Toucans.jpg"), name: 'Toucans' },
+  { image: require("../../assets/images/feathered/resplendent-quetzals/Resplendent-Quetzals.jpg"), name: 'Resplendent Quetzals' },
+  { image: require("../../assets/images/feathered/peacock/Peacock.jpg"), name: 'Peacocks' },
+  { image: require("../../assets/images/feathered/parrots/Parrots.jpg"), name: 'Parrots' },
+  { image: require("../../assets/images/feathered/mute-swan/Mute-Swan.jpg"), name: 'Mute Swans' },
+  { image: require("../../assets/images/feathered/mandarin-duck/Mandarin-Ducks.jpg"), name: 'Mandarin Ducks' },
+  { image: require("../../assets/images/feathered/macaw/Macaws.jpg"), name: 'Macaws' },
+  { image: require("../../assets/images/feathered/gouldian-finches/Gouldian-Finches.jpg"), name: 'Gouldian Finches' },
+  { image: require("../../assets/images/feathered/flamingos/Flamingos.jpg"), name: 'Flamingos' },
+];
+
+export const crustaceanItems: MemberItemProps[] = [
+  { image: require("../../assets/images/crustacean/tiger-prawn/Tiger-Prawn.jpg"), name: 'Tiger Prawn' },
+  { image: require("../../assets/images/crustacean/sand-crab/Sand-Crab.jpeg"), name: 'Sand Crab' },
+  { image: require("../../assets/images/crustacean/lobster/Lobster.jpg"), name: 'Lobster' },
+  { image: require("../../assets/images/crustacean/hermit-crab/hermit-crab.jpg"), name: 'Hermit Crab' },
+  { image: require("../../assets/images/crustacean/ghost-crab/ghost-crab.png"), name: 'Ghost Crab' },
+  { image: require("../../assets/images/crustacean/cray-fish/Crayfish.jpg"), name: 'Cray Fish' },
+  { image: require("../../assets/images/crustacean/coconut-crab/coconut-crab.jpg"), name: 'Coconut Crab' },
+  { image: require("../../assets/images/crustacean/christmas-island-red-crab/Christmas-Island-Red-Crab.jpg"), name: 'Christmas Island Red Crab' },
+  { image: require("../../assets/images/crustacean/blue-crab/Blue-Crab.jpg"), name: 'Blue Crab' },
+  { image: require("../../assets/images/crustacean/antarctic-krill/Antarctic-Krill.jpg"), name: 'Antarctic Krill' },
+];
+
+export const amphibiaItems: MemberItemProps[] = [
+  { image: require("../../assets/images/amphibia/wyoming-toad/Wyoming-toad.jpg"), name: 'Wyoming toad' },
+  { image: require("../../assets/images/amphibia/wyoming-toad/Wyoming-toad.jpg"), name: 'Salamanders' },
+  { image: require("../../assets/images/amphibia/oak-toad/Oak-toad.jpg"), name: 'Oak Toad' },
+  { image: require("../../assets/images/amphibia/notophthalmus-viridescens/notophthalmus-viridescens.jpg"), name: 'Notophthalmus viridescens' },
+  { image: require("../../assets/images/amphibia/grass-frog/Grass-frog.jpg"), name: 'Grass Frog' },
+  { image: require("../../assets/images/amphibia/glass-frog/Portrait.jpg"), name: 'Glass Frog' },
+  { image: require("../../assets/images/amphibia/cane-toad/Portrait.jpg"), name: 'Cane Toad' },
+  { image: require("../../assets/images/amphibia/caecilian/Portrait.jpg"), name: 'Caecilian' },
+  { image: require("../../assets/images/amphibia/american-bullfrog/Portrait.jpg"), name: 'American Bullfrog' },
+  { image: require("../../assets/images/amphibia/african-clawed-frog/Portrait.jpg"), name: 'African Clawed Frog' },
 ];

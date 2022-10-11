@@ -7,16 +7,16 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { categoryData } from "../db";
 
 export default function Category() {
-  const route = useRoute();
+  const route = useRoute<any>();
   const navigation = useNavigation<any>();
-
+  const title = route.params.name
   return (
     <Stack>
       <View height={Platform.OS == "android" ? 8 : 44} bg="#3D7944" />
-      <Header title="MAMMALS" />
+      <Header title={title} />
       <ScrollView style={{ height: Dimensions.get("screen").height - 250 }}>
         <View style={{ flexDirection: "row", width: "95%", marginHorizontal: "2.5%", flexWrap: "wrap", marginTop: 4 }}>
-          {categoryData["mammals"].map((info, index) => (
+          {categoryData[title.toLowerCase()].map((info, index) => (
             <View style={{ marginHorizontal: 15, marginVertical: 15 }} key={info.name + String(index)}>
               <MemberItem
                 {...info}

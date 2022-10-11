@@ -1,6 +1,13 @@
-import { View, ImageBackground, ImageSourcePropType, StyleSheet, Touchable, TouchableOpacity } from "react-native";
+import {
+  View,
+  ImageBackground,
+  ImageSourcePropType,
+  StyleSheet,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
-import { Text } from "native-base";
+import { Text, Image } from "native-base";
 import { TouchableOpacityProps } from "react-native";
 
 export interface MemberItemProps extends TouchableOpacityProps {
@@ -13,7 +20,7 @@ export default function MemberItem(props: MemberItemProps) {
 
   return (
     <TouchableOpacity style={styles.wrapper} {...rest}>
-      <ImageBackground source={image} style={styles.bg} />
+      <Image source={image} style={styles.bg} alt={name}/>
       <View style={styles.box}>
         <Text>{name}</Text>
       </View>
@@ -27,13 +34,20 @@ const styles = StyleSheet.create({
     height: 125,
     justifyContent: "space-between",
   },
-  bg: {
+  bg_image: {
     width: 100,
     height: 100,
   },
+  bg: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: 'green'
+  },
   box: {
     width: "100%",
-    alignItems: 'center',
-    padding: 5
+    alignItems: "center",
+    padding: 5,
   },
 });
