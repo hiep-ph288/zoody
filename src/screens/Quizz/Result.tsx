@@ -1,14 +1,14 @@
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image, Stack } from "native-base";
-import { quizzData } from "../db/quizz";
+import { quizzData } from '../../db/quizz'
 import { useRoute } from "@react-navigation/native";
 
 
 const show: { [key: string]: string } = {
-  easy: "Dễ",
-  medium: "Trung bình",
-  hard: "Khó",
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
 };
 
 
@@ -20,7 +20,7 @@ const Result = () => {
   return (
     <View style={styles.bg}>
       <Text style={styles.text__main}>ZOODY'S QUIZ</Text>
-      <Text style={styles.text__level}>Mức độ: {show[level]}</Text>
+      <Text style={styles.text__level}>Level: {show[level]}</Text>
       <View style={styles.container}>
         <Text style={styles.text__comment}>GREAT JOB</Text>
         <Text style={styles.text__score}>Your score</Text>
@@ -41,7 +41,7 @@ const Result = () => {
       </View>
 
       <Image
-        source={require("../../assets/images/quizresult-bg.png")}
+        source={require("../../../assets/images/quizresult-bg.png")}
         width={Math.round(Dimensions.get("screen").height * 0.25)}
         height={Math.round(Dimensions.get("screen").height * 0.25)}
         alt="quizresult-bg"

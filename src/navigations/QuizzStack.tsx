@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ParamListBase } from "@react-navigation/native";
 import QuizzHome from "../screens/Quizz/QuizzHome";
 import Quizz from "../screens/Quizz/Quizz";
-import Result from "../screens/Result";
+import Result from "../screens/Quizz/Result";
 
 interface QuizzStackParams {
   Category: {

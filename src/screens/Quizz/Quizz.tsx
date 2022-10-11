@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   text_ques: {
+    maxWidth: '90%',
     marginVertical: 30,
     fontSize: 18,
     fontWeight: "700",
