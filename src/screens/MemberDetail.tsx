@@ -25,7 +25,7 @@ export default function MemberDetail() {
           }}
         >
           <ImageBackground source={require('../../assets/images/VectorLeft.png')} style={{ width: 10, height: 20 }} />
-          <Text style={{ fontSize: 18, color: '#3D7944', fontWeight: '700', marginLeft: 15 }}>TIGER</Text>
+          <Text style={{ fontSize: 18, color: '#3D7944', fontWeight: '700', marginLeft: 15, textTransform:'capitalize' }}>{name}</Text>
         </TouchableOpacity>
         <Slide data={memberDetailData[name]["slide"]} />
         <View style={{ width: "90%", marginHorizontal: "5%", marginTop: 30 }}>
@@ -63,12 +63,11 @@ export default function MemberDetail() {
             <Text style={{ fontWeight: "700" }}>
               Biome: <Text style={{ fontWeight: "normal" }}>{memberDetailData[name].biome}</Text>
             </Text>
-            {/* <Text></Text> */}
           </View>
 
           <View style={{ marginTop: 10, marginBottom: 15 }}>
             <Text style={{ fontWeight: "700" }}>Fact</Text>
-            <View style={{ marginLeft: 15 }}>
+            <View style={{ marginLeft: 10 }}>
               {memberDetailData[name].facts.map((text) => (
                 <Text style={{ marginTop: 4 }} key={text}>{text}</Text>
               ))}

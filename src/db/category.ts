@@ -73,7 +73,7 @@ export const reptileItems: MemberItemProps[] = [
   { image: require("../../assets/images/reptile/lizard/Portrait.jpg"), name: 'Lizard' },
   { image: require("../../assets/images/reptile/leopard-gecko/Portrait.jpg"), name: 'Leopard Gecko' },
   { image: require("../../assets/images/reptile/iguana/Portrait.jpg"), name: 'Iguana' },
-  { image: require("../../assets/images/reptile/crocodile/Crocodile.jpg"), name: 'Crocodile' },
+  { image: require("../../assets/images/reptile/crocodile/Portrait.jpg"), name: 'Crocodile' },
   { image: require("../../assets/images/reptile/chameleon/Portrait.jpg"), name: 'Chameleon' },
   { image: require("../../assets/images/reptile/caiman/Portrait.jpg"), name: 'Caiman' },
 ];
@@ -92,14 +92,14 @@ export const insectItems: MemberItemProps[] = [
 ];
 
 export const featheredItems: MemberItemProps[] = [
-  { image: require("../../assets/images/feathered/victoria-crowned-pigeons/Victoria-Crowned-Pigeons.jpg"), name: 'Victoria Crowned Pigeons' },
+  { image: require("../../assets/images/feathered/victoria-crowned-pigeons/Victoria-Crowned-Pigeons.jpg"), name: 'Goura Victoria' },
   { image: require("../../assets/images/feathered/toucans/Toucans.jpg"), name: 'Toucans' },
-  { image: require("../../assets/images/feathered/resplendent-quetzals/Resplendent-Quetzals.jpg"), name: 'Resplendent Quetzals' },
+  { image: require("../../assets/images/feathered/resplendent-quetzals/Resplendent-Quetzals.jpg"), name: 'Resplendent Quetzal' },
   { image: require("../../assets/images/feathered/peacock/Peacock.jpg"), name: 'Peacocks' },
-  { image: require("../../assets/images/feathered/parrots/Parrots.jpg"), name: 'Parrots' },
+  { image: require("../../assets/images/feathered/parrots/Portrait.jpg"), name: 'Parrots' },
   { image: require("../../assets/images/feathered/mute-swan/Mute-Swan.jpg"), name: 'Mute Swans' },
   { image: require("../../assets/images/feathered/mandarin-duck/Mandarin-Ducks.jpg"), name: 'Mandarin Ducks' },
-  { image: require("../../assets/images/feathered/macaw/Macaws.jpg"), name: 'Macaws' },
+  { image: require("../../assets/images/feathered/macaw/Toanthan.jpg"), name: 'Macaws' },
   { image: require("../../assets/images/feathered/gouldian-finches/Gouldian-Finches.jpg"), name: 'Gouldian Finches' },
   { image: require("../../assets/images/feathered/flamingos/Flamingos.jpg"), name: 'Flamingos' },
 ];
@@ -112,20 +112,20 @@ export const crustaceanItems: MemberItemProps[] = [
   { image: require("../../assets/images/crustacean/ghost-crab/ghost-crab.png"), name: 'Ghost Crab' },
   { image: require("../../assets/images/crustacean/cray-fish/Crayfish.jpg"), name: 'Cray Fish' },
   { image: require("../../assets/images/crustacean/coconut-crab/coconut-crab.jpg"), name: 'Coconut Crab' },
-  { image: require("../../assets/images/crustacean/christmas-island-red-crab/Christmas-Island-Red-Crab.jpg"), name: 'Christmas Island Red Crab' },
+  { image: require("../../assets/images/crustacean/christmas-island-red-crab/Christmas-Island-Red-Crab.jpg"), name: 'Gecarcoidea natalis' },
   { image: require("../../assets/images/crustacean/blue-crab/Blue-Crab.jpg"), name: 'Blue Crab' },
   { image: require("../../assets/images/crustacean/antarctic-krill/Antarctic-Krill.jpg"), name: 'Antarctic Krill' },
 ];
 
-export const amphibiaItems: MemberItemProps[] = [
+export const amphibiansItems: MemberItemProps[] = [
   { image: require("../../assets/images/amphibia/wyoming-toad/Wyoming-toad.jpg"), name: 'Wyoming toad' },
-  { image: require("../../assets/images/amphibia/wyoming-toad/Wyoming-toad.jpg"), name: 'Salamanders' },
+  { image: require("../../assets/images/amphibia/salamander/Salamander.jpg"), name: 'Salamanders' },
   { image: require("../../assets/images/amphibia/oak-toad/Oak-toad.jpg"), name: 'Oak Toad' },
-  { image: require("../../assets/images/amphibia/notophthalmus-viridescens/notophthalmus-viridescens.jpg"), name: 'Notophthalmus viridescens' },
+  { image: require("../../assets/images/amphibia/notophthalmus-viridescens/Portrait.jpg"), name: 'Eastern Newt' },
   { image: require("../../assets/images/amphibia/grass-frog/Grass-frog.jpg"), name: 'Grass Frog' },
   { image: require("../../assets/images/amphibia/glass-frog/Portrait.jpg"), name: 'Glass Frog' },
   { image: require("../../assets/images/amphibia/cane-toad/Portrait.jpg"), name: 'Cane Toad' },
   { image: require("../../assets/images/amphibia/caecilian/Portrait.jpg"), name: 'Caecilian' },
-  { image: require("../../assets/images/amphibia/american-bullfrog/Portrait.jpg"), name: 'American Bullfrog' },
-  { image: require("../../assets/images/amphibia/african-clawed-frog/Portrait.jpg"), name: 'African Clawed Frog' },
+  { image: require("../../assets/images/amphibia/american-bullfrog/Portrait.jpg"), name: 'Bullfrog' },
+  { image: require("../../assets/images/amphibia/african-clawed-frog/Portrait.jpg"), name: 'Clawed Frog' },
 ];

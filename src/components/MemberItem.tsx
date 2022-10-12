@@ -22,7 +22,7 @@ export default function MemberItem(props: MemberItemProps) {
     <TouchableOpacity style={styles.wrapper} {...rest}>
       <Image source={image} style={styles.bg} alt={name}/>
       <View style={styles.box}>
-        <Text>{name}</Text>
+        <Text style={{textAlign:'center'}}>{name}</Text>
       </View>
     </TouchableOpacity>
   );

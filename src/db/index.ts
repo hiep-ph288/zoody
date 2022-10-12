@@ -1,6 +1,6 @@
 import { MemberImageProps } from "../components/MemberImage";
 import { MemberItemProps } from "../components/MemberItem";
-import { amphibiaItems, crustaceanItems, featheredItems, insectItems, mammalItems, reptileItems } from "./category";
+import { amphibiansItems, crustaceanItems, featheredItems, insectItems, mammalItems, reptileItems } from "./category";
 
 export const headerSlide: MemberImageProps[] = [
   { name: "Red Panda", image: require("../../assets/images/slide/red-panda.png") },
@@ -21,5 +21,5 @@ export const categoryData: CategoryData = {
   insect: insectItems,
   feathered: featheredItems,
   crustacean: crustaceanItems,
-  amphibia: amphibiaItems,
+  amphibians: amphibiansItems,
 };

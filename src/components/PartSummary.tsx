@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ImageBackground, ImageSourcePropType } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, ImageSourcePropType, Image } from "react-native";
 import React from "react";
 
 export interface PartSummaryProps {
@@ -19,17 +19,18 @@ export default function PartSummary(props: PartSummaryProps) {
       flexDirection: 'row',
       marginVertical: 10,
     }}>
-      <ImageBackground 
+      <Image
         source={image}
         style={{
-          width: 195,
-          height: '100%',
+          width: 200,
+          height: 200,
+          borderRadius: 10
         }}
       />
       <View style={{flexDirection: 'row'}}>
-        <View style={{width: '55%', marginLeft: 15, marginRight: 5}}>
-          <Text style={{color:'white', fontSize: 20, fontWeight: '700', marginTop: 25, marginBottom: 15,}}>{title}</Text>
-          <Text style={{color:'white', fontSize: 14}}>{summary}</Text>  
+        <View style={{width: '55%', marginLeft: 10, marginRight: 5}}>
+          <Text style={{color:'white', fontSize: 18, fontWeight: '700', marginTop: 10, marginBottom: 5,}}>{title}</Text>
+          <Text style={{color:'white', fontSize: 12}}>{summary}</Text>  
         </View> 
         <ImageBackground 
         source={icon}
