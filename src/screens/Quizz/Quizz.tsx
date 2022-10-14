@@ -1,5 +1,5 @@
-import { StyleSheet, Text, Dimensions, Platform } from "react-native";
-import { Button, Image, ScrollView, Stack, View } from "native-base";
+import { StyleSheet, Text, Dimensions, Platform, Image } from "react-native";
+import { Button, ScrollView, Stack, View } from "native-base";
 import React, { useState } from "react";
 import TextBox, { EStatus } from "../../components/TextBox";
 import { useNavigation } from "@react-navigation/native";
@@ -40,6 +40,7 @@ const Quizz = () => {
   const navigation = useNavigation<any>();
   const [currQues, setCurrQues] = useState(0);
   const level: string = route.params.level ? route.params.level : "easy";
+  const [img, setImg] = useState(quizzData[level][currQues].image);
 
   const onPress = (i: number) => () => {
     const ans = quizzData[level][currQues].ans;
@@ -67,6 +68,7 @@ const Quizz = () => {
       for (let index = 0; index < newStatus.length; index++) {
         newStatus[index] = EStatus.NORMAL;
       }
+      setImg(quizzData[level][currQues + 1].image);
       setStatus(newStatus);
     } else {
       navigation.navigate("ResultScreen", { level: level, point });
@@ -84,8 +86,8 @@ const Quizz = () => {
             width: imgWidth,
             height: Math.round((159 / 290) * imgWidth),
           }}
-          source={quizzData[level][currQues].image}
-          alt="Question"
+          source={img}
+          // alt="Question"
         />
         <Text style={styles.text_ques}>{quizzData[level][currQues].ques}</Text>
       </View>
@@ -124,12 +126,12 @@ const Quizz = () => {
       </View>
       <Image
         source={require("../../../assets/images/quiz-bg.png")}
-        width="100%"
+        // width="100%"
         height={Math.round(((5 / 4) * imgWidth) / 6)}
-        alt="quiz-bg"
-        position="absolute"
-        resizeMode="stretch"
-        bottom="0"
+        // alt="quiz-bg"
+        // position="absolute"
+        // resizeMode="stretch"
+        // bottom="0"
         style={{ zIndex: -1 }}
       />
     </Stack>
@@ -155,7 +157,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   text_ques: {
-    maxWidth: '90%',
+    maxWidth: "90%",
     marginVertical: 30,
     fontSize: 18,
     fontWeight: "700",
