@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Dimensions, Platform, Image } from "react-native";
+import { StyleSheet, Text, Dimensions, Platform, Image, StatusBar } from "react-native";
 import { Button, ScrollView, Stack, View } from "native-base";
 import React, { useState } from "react";
 import TextBox, { EStatus } from "../../components/TextBox";
@@ -77,6 +77,7 @@ const Quizz = () => {
 
   return (
     <Stack style={{ height: "100%" }}>
+      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
       <View height={Platform.OS == "android" ? 0 : 44} bg="#3D7944" />
       <View style={styles.container}>
         <Text style={styles.text_main}>ZOODY'S QUIZ</Text>
@@ -125,14 +126,13 @@ const Quizz = () => {
         )}
       </View>
       <Image
+        style={{
+          width: "100%",
+          height: Math.round(((5 / 4) * imgWidth) / 6),
+          position: "absolute",
+          bottom: 0,
+        }}
         source={require("../../../assets/images/quiz-bg.png")}
-        // width="100%"
-        height={Math.round(((5 / 4) * imgWidth) / 6)}
-        // alt="quiz-bg"
-        // position="absolute"
-        // resizeMode="stretch"
-        // bottom="0"
-        style={{ zIndex: -1 }}
       />
     </Stack>
   );

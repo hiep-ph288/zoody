@@ -40,6 +40,7 @@ const Practice = () => {
     EStatus.NORMAL,
     EStatus.NORMAL,
   ]);
+  const [point, setPoint] = useState(0);
 
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
@@ -51,12 +52,11 @@ const Practice = () => {
 
   const onChange = (data: any) => {
     const ans = practiceData[level][currQues].ans;
+    const newStatus = [...status];
     if (data.wordString.length == ans.length) {
       const ansText = ans.join("");
       setCorrect(ansText === data.wordString);
-    }
-    else {
-      // setTypedWord(data.wordString);
+    } else {
       setCorrect(null);
     }
   };
@@ -70,9 +70,24 @@ const Practice = () => {
     setStatus(newStatus);
   };
 
+  const onNext = () => {
+    if (currQues < practiceData[level].length - 1) {
+      setCurrQues(currQues + 1);
+      setPoint(point + 1);
+      const newStatus = [...status];
+      for (let index = 0; index < newStatus.length; index++) {
+        newStatus[index] = EStatus.NORMAL;
+      }
+      setStatus(newStatus);
+    } else {
+      navigation.navigate("PracticeResultScreen", { level: level, point });
+    }
+  };
+
   return (
     <Stack style={styles.container}>
       {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
+      <View height={Platform.OS == "android" ? 8 : 44} bg="#3D7944" />
       <View style={styles.header}>
         <Text style={styles.text_main}>PRACTICE WITH ZOODY</Text>
         <Text style={styles.text_level}>Level: {show[level]}</Text>
@@ -84,8 +99,8 @@ const Practice = () => {
       </View>
       <View style={styles.box__choose}>
         <QuizInput
-          size='large'
-          borderColor='#3D7944'
+          size="large"
+          borderColor="#3D7944"
           wordStructure={practiceData[level][currQues].ans.map((c) => true)}
           onChange={onChange}
         />
@@ -94,8 +109,9 @@ const Practice = () => {
         <Button
           style={styles.btn}
           key={level}
-          onPress={() =>
-            navigation.navigate("PracticeResultScreen", { level: level })
+          onPress={
+            onNext
+            //=> navigation.navigate("PracticeResultScreen", { level: level })
           }
         >
           <Text style={{ color: "#3D7944" }}>Continue</Text>
@@ -111,7 +127,7 @@ const Practice = () => {
         bottom="0"
         style={{ zIndex: -1 }}
       />
-      {correct != null &&<Text>{correct? "CORRECT":"IN_CORRECT"}</Text>}
+      {correct != null && <Text>{correct ? "CORRECT" : "IN_CORRECT"}</Text>}
     </Stack>
   );
 };

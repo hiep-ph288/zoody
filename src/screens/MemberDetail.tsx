@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, Dimensions, ImageSourcePropType, ImageBackground, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, Platform, StatusBar, ImageBackground, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
 import MemberImage, { MemberImageProps } from "../components/MemberImage";
-import { HStack, Box, Stack, ScrollView } from "native-base";
+import { HStack, Box, View, ScrollView } from "native-base";
 import Slide from "../components/Slide";
 import { memberDetailData } from "../db/memberdetail";
 import { useRoute } from "@react-navigation/native";
@@ -18,6 +18,8 @@ export default function MemberDetail() {
   return (
     <View>
       <ScrollView>
+      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
+      <View height={Platform.OS == "android" ? 8 : 44} bg="#3D7944" />
         <TouchableOpacity 
           style={{ flexDirection: 'row', alignItems: 'center', width: '100%', marginHorizontal: '5%', paddingVertical: 15}}
           onPress={ ()=> {

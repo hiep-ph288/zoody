@@ -1,12 +1,11 @@
 import {
   StyleSheet,
   Text,
-  View,
   TouchableOpacity,
-  Dimensions,
+  Platform,
   StatusBar,
 } from "react-native";
-import { Image, Stack } from "native-base";
+import { Image, Stack, View } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -25,14 +24,15 @@ const QuizzHome = () => {
   const navigation = useNavigation<any>();
   return (
     <Stack style={{ height: "100%" }}>
-      <StatusBar barStyle="dark-content" />
+      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
+      <View height={Platform.OS == "android" ? 8 : 44} bg="#3D7944" />
       <Image
         source={require("../../../assets/images/quiz1-bg.png")}
         width="40%"
         alt="quiz-bg"
         position="absolute"
         resizeMode="stretch"
-        top="0"
+        top="44"
         right="0"
       />
       <View style={styles.container}>

@@ -1,9 +1,8 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, Platform, StatusBar } from "react-native";
 import React from "react";
-import { Image, Stack } from "native-base";
-import { quizzData } from '../../db/quizz'
+import { Image, View } from "native-base";
+import { quizzData } from "../../db/quizz";
 import { useRoute } from "@react-navigation/native";
-
 
 const show: { [key: string]: string } = {
   easy: "Easy",
@@ -11,14 +10,14 @@ const show: { [key: string]: string } = {
   hard: "Hard",
 };
 
-
-
 const Result = () => {
   const route = useRoute<any>();
   const level: string = route.params.level ? route.params.level : "easy";
-  
+
   return (
     <View style={styles.bg}>
+      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
+      <View height={Platform.OS == "android" ? 0 : 44} bg="#3D7944" />
       <Text style={styles.text__main}>ZOODY'S QUIZ</Text>
       <Text style={styles.text__level}>Level: {show[level]}</Text>
       <View style={styles.container}>
@@ -30,11 +29,15 @@ const Result = () => {
             <Text>question</Text>
           </View>
           <View style={[styles.ques, styles.ques__true]}>
-            <Text style={[styles.ques__num, styles.text__white]}>{route.params.point}</Text>
+            <Text style={[styles.ques__num, styles.text__white]}>
+              {route.params.point}
+            </Text>
             <Text style={styles.text__white}>true</Text>
           </View>
           <View style={[styles.ques, styles.ques__false]}>
-            <Text style={[styles.ques__num, styles.text__white]}>{quizzData[level].length - route.params.point}</Text>
+            <Text style={[styles.ques__num, styles.text__white]}>
+              {quizzData[level].length - route.params.point}
+            </Text>
             <Text style={styles.text__white}>false</Text>
           </View>
         </View>
